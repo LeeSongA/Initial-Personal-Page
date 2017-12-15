@@ -7,12 +7,13 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
 		<link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
+		<link rel="stylesheet" href="./css/intro.css"/>
 		<script>
 			$(document).ready(function(){
 				setTimeout(function() {
 					$('.fade').remove();
 					 GitHubCalendar(".calendar", "LeeSongA");
-				},5500)
+				},10000)
 			});	
 		</script>
 		<style>	
@@ -21,209 +22,6 @@
 				height:100%;
 				margin:0;
 				overflow:hidden;
-			}
-			.fade{
-				width:100%;
-				height:100%;
-				margin:0;
-				animation:fade 2s;
-				animation-delay: 3.5s;
-				-webkit-animation-fill-mode: forwards;
-			}
-			#main{
-				float:left;
-				opacity:0;
-				animation:main 2s;
-				animation-delay: 3.5s;
-				-webkit-animation-fill-mode: forwards;
-			}
-			.big_circle1 {
- 				width:300px;
- 				height:300px;
-				position:absolute; 
-  				top:50%;  
-  				left:50%;
-				margin-top:-150px;
-				margin-left:-150px;
- 				border-radius:150px;
- 				-moz-border-radius:150px;
- 				-webkit-border-radius:150px;
- 				-ms-border-radius:150px;
- 				-khtml-border-radius:150px;
- 				-o-border-radius:150px;
-				background:#79e2d4;
-				animation:big_circle1 2s;
-				-webkit-animation-fill-mode: forwards;
-			}
-			.big_circle2{
-				position:absolute; 
-  				top:50%;  
-  				left:50%;
-				background:#ffffff;
-				animation:big_circle2 0.8s;
-				animation-delay: 1.5s;
-				-webkit-animation-fill-mode: forwards;
-			}
-			.big_circle3{
-				position:absolute; 
-  				top:50%;  
-  				left:50%;
-				background:#79e2d4;
-				animation:big_circle3 0.7s;
-				animation-delay: 2s;
-				-webkit-animation-fill-mode: forwards;
-			}
-			.big_circle4{
-				position:absolute; 
-  				top:50%;  
-  				left:50%;
-				background:#ffffff;
-				animation:big_circle4 0.7s;
-				animation-delay: 2.2s;
-				-webkit-animation-fill-mode: forwards;
-			}
-			.text{
-				position:absolute;   				
-				font-size:80px;
-				width:250px;
-				height:200px;
-				line-height:200px;
-				text-align:center;
-				font-weight:bold;
-				left:0;
-				right:0;
-				top:0;
-				bottom:0;
-				margin:auto;
-				color:#79e2d4;
-				opacity:0;
-				animation:text 0.1s;
-				animation-delay: 1s;
-				-webkit-animation-fill-mode: forwards;
-			}
-			@keyframes big_circle1 {
-  				0% {
-    					width:300px;
-    					height:300px;
-					margin-top:-150px;
-					margin-left:-150px;
-  				}
-				50% {
-    					width:250px;
-    					height:250px;
-					margin-top:-125px;
-					margin-left:-125px;
-					
-				}
-				75% {
-    					width:20px;
-    					height:20px;
-					margin-top:-10px;
-					margin-left:-10px;
-				}
-  				100% {
-    					width:2000px;
-    					height:2000px;
- 					border-radius:1000px;
- 					-moz-border-radius:1000px;
- 					-webkit-border-radius:1000px;
- 					-ms-border-radius:1000px;
- 					-khtml-border-radius:1000px;
- 					-o-border-radius:1000px;
-					margin-top:-1000px;
-					margin-left:-1000px;
-  				}
-			}
-			@keyframes big_circle2 {
-  				0% {
-    					width:0px;
- 					height:0px;
-  				}
-  				100% {
-    					width:500px;
-    					height:500px;
- 					border-radius:250px;
- 					-moz-border-radius:250px;
- 					-webkit-border-radius:250px;
- 					-ms-border-radius:250px;
- 					-khtml-border-radius:250px;
- 					-o-border-radius:250px;
-					margin-top:-250px;
-					margin-left:-250px;
-  				}
-			}
-			@keyframes big_circle3 {
-  				0% {
-    					width:0px;
- 					height:0px;
-  				}
-  				100% {
-    					width:520px;
-    					height:520px;
- 					border-radius:260px;
- 					-moz-border-radius:260px;
- 					-webkit-border-radius:260px;
- 					-ms-border-radius:260px;
- 					-khtml-border-radius:260px;
- 					-o-border-radius:260px;
-					margin-top:-260px;
-					margin-left:-260px;
-  				}
-			}
-			@keyframes big_circle4 {
-  				0% {
-    					width:0px;
- 					height:0px;
-  				}
-				70%{
-					
-    					width:450px;
-    					height:450px;
- 					border-radius:225px;
- 					-moz-border-radius:225px;
- 					-webkit-border-radius:225px;
- 					-ms-border-radius:225px;
- 					-khtml-border-radius:225px;
- 					-o-border-radius:225px;
-					margin-top:-225px;
-					margin-left:-225px;
-				}
-  				100% {
-    					width:350px;
-    					height:350px;
- 					border-radius:175px;
- 					-moz-border-radius:175px;
- 					-webkit-border-radius:175px;
- 					-ms-border-radius:175px;
- 					-khtml-border-radius:175px;
- 					-o-border-radius:175px;
-					margin-top:-175px;
-					margin-left:-175px;
-  				}
-			}
-			@keyframes text {
-  				0% {
-    					opacity:0;
-  				}
-  				100% {
-    					opacity:1;
-  				}
-			}
-			@keyframes fade {
-  				0% {
-    					opacity:1;
-  				}
-  				100% {
-    					opacity:0;
-  				}
-			}
-			@keyframes main {
-  				0% {
-    					opacity:0;
-  				}
-  				100% {
-    					opacity:1;
-  				}
 			}
 		</style>
 		
@@ -236,6 +34,17 @@
 			<div class="big_circle3"></div>
 			<div class="big_circle4"></div>
 			<div class="text">TEXT</div>
+			<div class="big_circle5"></div>
+			<div class="rotate_collection">
+				<div class="small_circle1"></div>
+				<div class="small_circle2"></div>
+				<div class="small_circle3"></div>
+				<div class="small_circle4"></div>
+				<div class="small_circle5"></div>
+				<div class="small_circle6"></div>
+				<div class="small_circle7"></div>
+				<div class="small_circle8"></div>
+			</div>
 		</div>
 		<div id="main">
 		<div id="page-wrapper">
