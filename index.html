@@ -9,11 +9,33 @@
 		<link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
 		<link rel="stylesheet" href="./css/intro.css"/>
 		<script>
+
+			/*         이전에 세션이 없다면 - 세션 생성            *
+			 * 세션을 생성하는 이유: 인트로를 한번만 보여주기 위해 */
+			if(sessionStorage.getItem("intro") != "false")
+				sessionStorage.setItem("intro", "true");
 			$(document).ready(function(){
-				setTimeout(function() {
+
+				/*  인트로를 한번도 안보여줬다면  */
+				if(sessionStorage.getItem("intro") == "true"){
+					sessionStorage.setItem("intro","false");
+
+					/* 8초 뒤에는 인트로가 끝날것이다 가정 */
+					setTimeout(function() {
+						$('.fade').remove();
+						$('body').css('overflow-y', 'auto');
+						GitHubCalendar(".calendar", "LeeSongA");
+					},8000)
+				}
+				
+				/* 인트로를 한번이라도 보여줬다면 */
+				else{
 					$('.fade').remove();
-					 GitHubCalendar(".calendar", "LeeSongA");
-				},10000)
+					$('#main').css('animation-delay','0s');
+					$('body').css('overflow-y', 'auto');
+					GitHubCalendar(".calendar", "LeeSongA");
+				}
+			
 			});	
 		</script>
 		<style>	
@@ -33,7 +55,10 @@
 			<div class="big_circle2"></div>
 			<div class="big_circle3"></div>
 			<div class="big_circle4"></div>
-			<div class="text">TEXT</div>
+			<div class="text">STORY</div>
+			<div class="slime"></div>
+			<img class="eye" src="./slime.png">
+			<div class="copy_right">Copyright ⓒ 2017 by <b>Song A Lee</b>. All right reserved.</div>
 			<div class="big_circle5"></div>
 			<div class="rotate_collection">
 				<div class="small_circle1"></div>
@@ -69,7 +94,6 @@
 						<li class="outer-menu-item">
 							<span class="menu-title"> 준비 중 </span>
 							<ul class="inner-menu">
-<<<<<<< HEAD
 								<li class="inner-menu-item"><a href="#"> BAEKJOON </a></li>
 								<li class="inner-menu-item"><a href="#"> GitHub </a></li>
 								<li class="inner-menu-item"><a href="#"> 어학 </a></li>
@@ -77,13 +101,6 @@
 								<li class="inner-menu-item"><a href="#"> 집중교육  (18. 1학기) </a></li>
 								<li class="inner-menu-item"><a href="#"> After you (18. 여름) </a></li>
 								<li class="inner-menu-item"><a href="#"> 인턴 (18. 겨울) </a></li>
-=======
-								<li class="inner-menu-item"><a href="#prepare-1"> BAEKJOON </a></li>
-								<li class="inner-menu-item"><a href="#prepare-2"> GitHub </a></li>
-								<li class="inner-menu-item"><a href="#prepare-3"> 어학 </a></li>
-								<li class="inner-menu-item"><a href="#prepare-4"> 정보처리기사 </a></li>
-								<li class="inner-menu-item"><a href="#prepare-5"> 인턴 </a></li>
->>>>>>> e446735dad2330fa7523594b0bd17d3f7f2a8390
 							</ul>
 						</li>
 						<li class="outer-menu-item">
@@ -152,7 +169,7 @@
 		<p> 느낀점</p>
 		<br>
 		<h3><a name="activity-4"> 교과 외 활동 </a></h3>
-		<p> 17.09.19 - 3D 프린터 체험 실습 교육 </p>
+		<p> 17.09.19 - 3D 프린터 체험 실습 교육 </p>(버튼 누르면 아래 항목 뜨게 하면 좋을듯)
 		<p> 교육 내용: 피젯스피너 모델링 및 3D 프린터 출력 </p>
 		<p> 17.09.20 - 공학과 의료 토크 콘서트</p>
 		<p> 교육 내용: </p>
