@@ -7,16 +7,46 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
 		<link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
+		<link rel="stylesheet" href="./css/intro.css"/>
 		<script>
 			$(document).ready(function(){
-			    GitHubCalendar(".calendar", "LeeSongA");
+				setTimeout(function() {
+					$('.fade').remove();
+					 GitHubCalendar(".calendar", "LeeSongA");
+				},10000)
 			});	
 		</script>
+		<style>	
+			body{
+				width:100%;
+				height:100%;
+				margin:0;
+				overflow:hidden;
+			}
+		</style>
 		
 
 	</head>
-	
-	<body style="float:left;">
+	<body>
+		<div class="fade">
+			<div class="big_circle1"></div>
+			<div class="big_circle2"></div>
+			<div class="big_circle3"></div>
+			<div class="big_circle4"></div>
+			<div class="text">TEXT</div>
+			<div class="big_circle5"></div>
+			<div class="rotate_collection">
+				<div class="small_circle1"></div>
+				<div class="small_circle2"></div>
+				<div class="small_circle3"></div>
+				<div class="small_circle4"></div>
+				<div class="small_circle5"></div>
+				<div class="small_circle6"></div>
+				<div class="small_circle7"></div>
+				<div class="small_circle8"></div>
+			</div>
+		</div>
+		<div id="main">
 		<div id="page-wrapper">
 			<header id="main-header"></header>
 			<nav id="main-navigation">
@@ -25,13 +55,21 @@
 						<li class="outer-menu-item">
 							<span class="menu-title"> 관심분야 </span>
 							<ul class="inner-menu">
-								<li class="inner-menu-item"><a href="#"> 의료 </a></li>
-								<li class="inner-menu-item"><a href="#"> IoT </a></li>
+								<li class="inner-menu-item"><a href="#interest-1"> 의료 </a></li>
+								<li class="inner-menu-item"><a href="#interest-2"> IoT </a></li>
+							</ul>
+						</li>
+						<li class="outer-menu-item">
+							<span class="menu-title"> 기술 </span>
+							<ul class="inner-menu">
+								<li class="inner-menu-item"><a href="#skill-1"> C </a></li>
+								<li class="inner-menu-item"><a href="#skill-2"> Java </a></li>
 							</ul>
 						</li>
 						<li class="outer-menu-item">
 							<span class="menu-title"> 준비 중 </span>
 							<ul class="inner-menu">
+<<<<<<< HEAD
 								<li class="inner-menu-item"><a href="#"> BAEKJOON </a></li>
 								<li class="inner-menu-item"><a href="#"> GitHub </a></li>
 								<li class="inner-menu-item"><a href="#"> 어학 </a></li>
@@ -39,15 +77,29 @@
 								<li class="inner-menu-item"><a href="#"> 집중교육  (18. 1학기) </a></li>
 								<li class="inner-menu-item"><a href="#"> After you (18. 여름) </a></li>
 								<li class="inner-menu-item"><a href="#"> 인턴 (18. 겨울) </a></li>
+=======
+								<li class="inner-menu-item"><a href="#prepare-1"> BAEKJOON </a></li>
+								<li class="inner-menu-item"><a href="#prepare-2"> GitHub </a></li>
+								<li class="inner-menu-item"><a href="#prepare-3"> 어학 </a></li>
+								<li class="inner-menu-item"><a href="#prepare-4"> 정보처리기사 </a></li>
+								<li class="inner-menu-item"><a href="#prepare-5"> 인턴 </a></li>
+>>>>>>> e446735dad2330fa7523594b0bd17d3f7f2a8390
 							</ul>
 						</li>
 						<li class="outer-menu-item">
 							<span class="menu-title"> 활동 </span>
 							<ul class="inner-menu">
-								<li class="inner-menu-item"><a href="#"> GitHub 활동 </a></li>
-								<li class="inner-menu-item"><a href="#"> 파란학기 </a></li>
-								<li class="inner-menu-item"><a href="#"> 도메인 분석 및 설계 </a></li>
-								<li class="inner-menu-item"><a href="#"> 교과 외 활동 </a></li>
+								<li class="inner-menu-item"><a href="#activity-1"> GitHub 활동 </a></li>
+								<li class="inner-menu-item"><a href="#activity-2"> 파란학기 </a></li>
+								<li class="inner-menu-item"><a href="#activity-3"> 도메인 분석 및 설계 </a></li>
+								<li class="inner-menu-item"><a href="#activity-4"> 교과 외 활동 </a></li>
+							</ul>
+						</li>
+						<li class="outer-menu-item">
+							<span class="menu-title"> 사용한 오픈 소스 </span>
+							<ul class="inner-menu">
+								<li class="inner-menu-item"><a href="#reference-1"> JQuery </a></li>
+								<li class="inner-menu-item"><a href="#reference-2"> 깃 캘린더 </a></li>
 							</ul>
 						</li>
 					</ul>
@@ -62,18 +114,28 @@
 		</div>
 
 		<h3> 관심분야 </h3>
-		<p> 의료 / IoT </p>
+		<p><a name="interest-1"> 의료 </a></p>
+		<br>
+		<p><a name="interest-2"> IoT </a></p>
 		<br>
 		<h3> 준비 중 </h3>
-		<p> 백준 / GitHub / 어학 / 정보처리기사 / 인턴 </p>
+		<p><a name="prepare-1"> 백준 </a></p>
+		<br>
+		<p><a name="prepare-2"> GitHub </a></p>
+		<br>
+		<p><a name="prepare-3"> 어학 </a></p>
+		<br>
+		<p><a name="prepare-4"> 정보처리기사 </a></p>
+		<br>
+		<p><a name="prepare-5"> 인턴 </a></p>
 		<br>
 		<div style="height: 1%; overflow: hidden;">
-		<h3> GitHub 활동 </h3>
+		<h3><a name="activity-1"> GitHub 활동 </a></h3>
 		<img src="https://avatars0.githubusercontent.com/u/29747023?s=310&v=4" style="float:left;"/>
 		<div class="calendar" style="float:left;"></div>
 		</div>
 		<br>
-		<h3> 파란학기(수상) </h3>
+		<h3><a name="activity-2"> 파란학기(수상) </a></h3>
 		<p> 주제: 카메라인식을 통한 지능형 시간표 추천 </p>
 		<p> 사용 언어: Java / Python / C </p>
 		<p> 기술 요소: 텐서플로우, 아마존 웹서비스, Django(Python)</p>
@@ -81,7 +143,7 @@
 		<p> 내용 </p>
 		<p> 느낀점 </p>
 		<br>		
-		<h3> 도메인 분석 및 설계 </h3>
+		<h3><a name="activity-3"> 도메인 분석 및 설계 </a></h3>
 		<p> 주제: 영화관 관리 시스템(MOVMORE)를 Agile 방법론에 따른 설계 </p>
 		<p> 사용 언어: Java</p>
 		<p> 기술 요소: 주로 설계에 관한 프로젝트 </p>
@@ -89,7 +151,7 @@
 		<p> 내용 </p>
 		<p> 느낀점</p>
 		<br>
-		<h3> 교과 외 활동 </h3>
+		<h3><a name="activity-4"> 교과 외 활동 </a></h3>
 		<p> 17.09.19 - 3D 프린터 체험 실습 교육 </p>
 		<p> 교육 내용: 피젯스피너 모델링 및 3D 프린터 출력 </p>
 		<p> 17.09.20 - 공학과 의료 토크 콘서트</p>
@@ -105,7 +167,11 @@
 
 		<br>
 		<h3> 사용한 오픈 소스 </h3>
-		<a href="https://github.com/IonicaBizau/github-calendar">깃 캘린더 : IonicaBizau/github-calendar</a>
+		<p><a name="reference-1">JQuery</a></p>
+		<a href="https://code.jquery.com/jquery-3.2.1.min.js">https://code.jquery.com/jquery-3.2.1.min.js</a>
+		<p><a name="reference-2">깃 캘린더</a></p>
+		<a href="https://github.com/IonicaBizau/github-calendar">https://github.com/IonicaBizau/github-calendar</a>
+	</div>
 	</body>
 </html>
 
