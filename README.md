@@ -1,1 +1,2 @@
-this is personal page
+This is personal page
+It includes my CV
