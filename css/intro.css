@@ -6,12 +6,41 @@
 	animation-delay: 6.5s;
 	-webkit-animation-fill-mode: forwards;
 }
-#main{
+#page-wrapper{
 	float:left;
 	opacity:0;
-	animation:main 2s;
+	width:100%;
+	height:100%;
+	margin:0;
+	animation:page-wrapper 2s;
 	animation-delay: 6.5s;
 	-webkit-animation-fill-mode: forwards;
+}
+header{
+	width:100%;
+	float:left;
+	margin-bottom:10px;
+	background:#aaaaaa;
+}
+aside{
+	float:left;
+	width:200px;
+	padding:10px;
+}
+
+aside img{
+	width:180px;
+	height:180px;
+	background:#cccccc;
+}
+section{
+	float:left;
+	padding:10px;
+}
+footer{
+	width:100%;
+	float:left;
+	background:#aaaaaa;
 }
 .rotate_collection{
 	position:absolute;
@@ -632,7 +661,7 @@
     		opacity:0;
   	}
 }
-@keyframes main {
+@keyframes page-wrapper {
   	0% {
     		opacity:0;
   	}
