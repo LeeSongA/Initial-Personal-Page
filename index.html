@@ -22,20 +22,23 @@
 
 					/* 8초 뒤에는 인트로가 끝날것이다 가정 */
 					setTimeout(function() {
-						$('.fade').remove();
-						$('body').css('overflow-y', 'auto');
-						GitHubCalendar(".calendar", "LeeSongA");
+						init();
 					},8000)
 				}
 				
 				/* 인트로를 한번이라도 보여줬다면 */
 				else{
-					$('.fade').remove();
 					$('#page-wrapper').css('animation-delay','0s');
-					$('body').css('overflow-y', 'auto');
-					GitHubCalendar(".calendar", "LeeSongA");
+					init();
 				}
-			});	
+			});
+		function init(){
+			$('.fade').remove();
+			$('body').css('overflow-y', 'auto');
+			GitHubCalendar(".calendar", "LeeSongA");
+			$('aside').css('top',$('header img').height()+'px');	//프로필(왼쪽) 위치 조정
+			$('section').css('top',$('header img').height()+'px');	//본문(오른쪽) 위치 조정
+		}	
 		</script>
 		<style>	
 			body{
@@ -71,10 +74,13 @@
 			</div>
 		</div>
 		<div id="page-wrapper">
-			<header id="main-header">
+			<header>
+				<img class="background" src="medical.jpg">
+				<img class="home" src="home.png">
 				<nav id="main-navigation">
-					<div class="pull-left" style="display:none;">
-						<ul class="outer-menu">
+					<div class="pull-left">
+						항목&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp항목&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp항목&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp항목
+						<ul class="outer-menu" style="display:none;">
 							<li class="outer-menu-item">
 								<span class="menu-title"> 관심분야 </span>
 								<ul class="inner-menu">
@@ -119,7 +125,7 @@
 							</li>
 						</ul>
 					</div>
-
+					<div class="shadow"></div
 				</nav>
 			</header>
 			<aside id="main-aside">
@@ -141,13 +147,36 @@
 					<img class="icon" src="https://www.acmicpc.net/favicon-32x32.png">
 				</a>
 			</aside>
-			<section id="main-section">
+			<section>
 				<h3> 관심분야 </h3>
 				<p><a name="interest-1"> 의료 </a></p>
 				<br>
 				<p><a name="interest-2"> IoT </a></p>
 				<br>
-					<h3> 준비 중 </h3>
+				<h3> 기술 </h3>
+				<div class="list">
+					<img class="skill" src="c.png" width="100px" height="100px">
+					<img class="skill" src="java.png" width="100px" height="100px">
+					<br>
+					<img class="skill" src="photoshop.png" width="100px" height="100px">
+					<img class="skill" src="illustrator.png" width="100px" height="100px">
+				</div>
+				예정(모비우스 넣기)<br>
+				<div class="list">
+					<img class="skill" src="nodejs.png" width="163px" height="100px">
+					<img class="skill" src="html+css.svg" width="154px" height="100px">
+					<img class="skill" src="bootstrap.svg" width="100px" height="100px">
+					<img class="skill" src="d3js.png" width="100px" height="100px">
+					<br>
+					<img class="skill" src="raspberry.png" width="79px" height="100px">
+					<img class="skill" src="arduino.png" width="147px" height="100px">
+					<br>
+					<img class="skill" src="android.png" width="84px" height="100px">
+					<br>
+					<img class="skill" src="python.png" width="100px" height="100px">
+					<img class="skill" src="tensorflow.png" width="100px" height="100px">
+				</div>
+				<h3> 준비 중 </h3>
 				<p><a name="prepare-1"> 백준 </a></p>
 				<br>
 				<p><a name="prepare-2"> GitHub </a></p>
