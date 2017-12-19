@@ -4,8 +4,8 @@ It includes my CV<br>
 Reference<br>
 **nodejs.png**<br>
 https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png<br>
-**html+css.svg**<br>
-https://www.google.co.kr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi8sPn59pPYAhWFkJQKHblAAswQjRwIBw&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ACSS3_and_HTML5_logos_and_wordmarks.svg&psig=AOvVaw3nZxgNh-VxQndSpZYotS_j&ust=1513699123510557<br>
+**html+css+js.png**<br>
+https://codeinstitute.net/wp-content/uploads/2015/03/javascript-courses-training-dublin.png<br>
 **raspberry.png**<br>
 https://lh4.googleusercontent.com/qSq_l77967PHr4FrbWEW8j-V5huioMnquD-eH1LzAqT48UEnYB3W7AkMbhHkjbSqB11yzK09Y8ZkJIgqJK60wmBrAj99yHLSl0f2ic_tcrP0lWTE3Y4gstaG5vhC5TBd-o1yrtiD<br>
 **arduino.png**<br>
@@ -26,6 +26,8 @@ https://image.flaticon.com/icons/png/512/226/226777.png<br>
 https://cdn.pixabay.com/photo/2015/11/27/10/55/photoshop-1065296_960_720.jpg<br>
 **illustrator.png**<br>
 https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAfUsmoof7rB4yNXbdxs5uHOgd_JWTqaPlWIhQEsAr2aSNHaLm<br>
+**jquery.gif**<br>
+https://www.google.co.kr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjd_P27v5bYAhXJbrwKHfO8C6UQjRwIBw&url=https%3A%2F%2Fwww.chicagocomputerclasses.com%2Fjquery-training%2F&psig=AOvVaw2DcXkj1o6zRY5s-uWXzCgp&ust=1513787340928096<br>
 <br>
 **medical.jpg**<br>
 https://pixabay.com/ko/%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%82%AC%EC%97%85-%EC%9E%85%EB%A0%A5-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9D%98%EC%82%AC-%EC%9D%98%EB%A3%8C-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%B1%85%EC%83%81-1149148/<br>
