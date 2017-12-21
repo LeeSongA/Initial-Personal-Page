@@ -28,6 +28,10 @@ https://cdn.pixabay.com/photo/2015/11/27/10/55/photoshop-1065296_960_720.jpg<br>
 https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAfUsmoof7rB4yNXbdxs5uHOgd_JWTqaPlWIhQEsAr2aSNHaLm<br>
 **jquery.gif**<br>
 https://www.google.co.kr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjd_P27v5bYAhXJbrwKHfO8C6UQjRwIBw&url=https%3A%2F%2Fwww.chicagocomputerclasses.com%2Fjquery-training%2F&psig=AOvVaw2DcXkj1o6zRY5s-uWXzCgp&ust=1513787340928096<br>
+**aws.png**<br>
+https://sdtimes.com/wp-content/uploads/2017/02/0228.sdt-aws.png<br>
+**oracle.png**<br>
+http://bacula.us/wp-content/uploads/2015/05/Oracle-DB.png<br>
 <br>
 **medical.jpg**<br>
 https://pixabay.com/ko/%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%82%AC%EC%97%85-%EC%9E%85%EB%A0%A5-%ED%82%A4%EB%B3%B4%EB%93%9C-%EB%85%B8%ED%8A%B8%EB%B6%81-%EC%9D%98%EC%82%AC-%EC%9D%98%EB%A3%8C-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%B1%85%EC%83%81-1149148/<br>
