@@ -57,6 +57,14 @@ aside{
 	width:20px;
 	height:20px;
 }
+.card .mail{
+	margin:5px;
+	width:15px;
+	height:15px;
+}
+.card span{
+	font-size:8pt;
+}
 
 .card a{
 	text-decoration:none;
