@@ -10,16 +10,45 @@
 		<link rel="stylesheet" href="./css/intro.css"/>
 
 		<script>
+			var time=0;
 			$(document).ready(function(){
 					/* 8초 뒤에는 인트로가 끝날것이다 가정 */
-					setTimeout(function() {
-						location.href="./main.html";
-					},8000);
+					setInterval(function() {
+						time+=50;
+						if(time == 4000)
+							$('.girl1').css('opacity','1');
+						else if(time == 4500){
+							$('.girl1').css('opacity','0');
+							$('.girl2').css('opacity','1');
+						}
+						else if(time == 4550){
+							$('.girl2').css('opacity','0');
+							$('.girl3').css('opacity','1');
+						}
+						else if(time == 4600){
+							$('.girl3').css('opacity','0');
+							$('.girl4').css('opacity','1');
+						}
+						else if(time == 5900){
+							$('.girl4').css('opacity','0');
+							$('.girl3').css('opacity','1');
+						}
+						else if(time == 5950){
+							$('.girl3').css('opacity','0');
+							$('.girl2').css('opacity','1');
+						}
+						else if(time == 6000){
+							$('.girl2').css('opacity','0');
+							$('.girl1').css('opacity','1');
+						}
+						if(time == 8000)
+							location.href="./main.html";
+					},50);
 				}
 			);
 		</script>
 		<style>	
-			body{
+			body, html{
 				width:100%;
 				height:100%;
 				margin:0;
@@ -32,15 +61,16 @@
 	<body>
 		
 		<div class="fade">
-			<div class="big_circle1"></div>
-			<div class="big_circle2"></div>
-			<div class="big_circle3"></div>
-			<div class="big_circle4"></div>
+			<img class="big_circle1" src="circle-mint.png">
+			<img class="big_circle2" src="circle-white.png">
+			<img class="big_circle3" src="circle-mint.png">
+			<img class="big_circle4" src="circle-white.png">
+			<img class="gradation" src="gradation.png">
 			<div class="text">TEXT</div>
-			<div class="slime"></div>
-			<img class="eye" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/intro/slime.png?raw=true">
-			<div class="copy_right">Copyright ⓒ 2017 by <b>Song A Lee</b>. All right reserved.</div>
-			<div class="big_circle5"></div>
+			<img class="girl1" src="girl1.png">
+			<img class="girl2" src="girl2.png">
+			<img class="girl3" src="girl3.png">
+			<img class="girl4" src="girl4.png">
 			<div class="rotate_collection">
 				<div class="small_circle1"></div>
 				<div class="small_circle2"></div>
@@ -51,6 +81,7 @@
 				<div class="small_circle7"></div>
 				<div class="small_circle8"></div>
 			</div>
+			<div class="copy_right">Copyright ⓒ 2017 by <b>Song A Lee</b>. All right reserved.</div>
 		</div>
 	</body>
 </html>
