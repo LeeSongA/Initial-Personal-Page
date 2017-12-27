@@ -21,8 +21,12 @@ header .home{
 	z-index:2;
 }
 header .background{
-	width:100%;
-	z-index:-1;
+   	background-image: url('https://github.com/LeeSongA/leesonga.github.com/blob/master/image/background/medical.jpg?raw=true');
+	min-height: 256px;
+    	
+	background-attachment: fixed;
+    	background-repeat: no-repeat;
+    	background-size: 100%;
 }
 header .pull-left{
 	position:fixed;
