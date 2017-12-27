@@ -15,7 +15,10 @@
 					/* 8초 뒤에는 인트로가 끝날것이다 가정 */
 					setInterval(function() {
 						time+=50;
-						if(time == 4000)
+						if(time >=3500 && time<4000){
+							$('.girl1').css('opacity',(time-3500)/500.0);
+						}
+						else if(time == 4000)
 							$('.girl1').css('opacity','1');
 						else if(time == 4500){
 							$('.girl1').css('opacity','0');

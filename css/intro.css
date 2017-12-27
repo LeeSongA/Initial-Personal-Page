@@ -238,7 +238,7 @@
 .girl1, .girl2, .girl3, .girl4{
 	opacity:0;
 	position:absolute; 
-  	top:20px;  
+  	top:40px;  
   	left:0;
 	bottom:0;
 	right:0;
@@ -256,7 +256,7 @@
 	font-weight:bold;
 	top:50%;
 	margin-top:-100px;
-	color:#79e2d4;
+	color:#0093e5;
 	opacity:0;
 	animation:text 5s;
 	animation-delay: 1.5s;
