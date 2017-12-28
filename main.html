@@ -8,22 +8,56 @@
 		<script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-		
-		
+	
   		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
 		<link rel="stylesheet" href="./css/main.css"/>
 
 		<script>
+			var interest, skill, prepare, git;
+			var scroll;
+			var offset;
 			$(document).ready(function(){
 				GitHubCalendar(".calendar", "LeeSongA");
+
+				interest = $('#interest').offset().top;
+				skill = $('#skill').offset().top;
+				prepare = $('#prepare').offset().top;
+				git = $('#git').offset().top;
+				offset = $(window).height()/2;
+
+    				$("#interest").css('opacity','0');
+    				$("#skill").css('opacity','0');
+    				$("#prepare").css('opacity','0');
+    				$("#git").css('opacity','0');
+
+			 	$(window).scroll(function(){
+			      		scroll = $(this).scrollTop();
+	      				if( scroll + offset >= interest ) 
+           					$("#interest").css('opacity','1');
+        				else
+    						$("#interest").css('opacity','0');
+	      				if( scroll + offset >= skill ) 
+           					$("#skill").css('opacity','1');
+        				else
+    						$("#skill").css('opacity','0');
+					if( scroll + offset >= prepare ) 
+           					$("#prepare").css('opacity','1');
+        				else
+    						$("#prepare").css('opacity','0');
+	      				if( scroll + offset >= git ) 
+           					$("#git").css('opacity','1');
+        				else
+    						$("#git").css('opacity','0');
+        				  
+   				});
 			});
 		</script>
 	</head>
 	<body>
 		<div id="page-wrapper">
 			<header>
-				<img class="background" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/background/medical.jpg?raw=true">
+				<div class="background w3-display-container w3-opacity-min"></div>
 				<a href="./main.html">
 					<img class="home" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/menu/home.png?raw=true">
 				</a>
@@ -113,102 +147,117 @@
 			</div>
 			</aside>
 			<section>
-				<h3> 관심분야 </h3>
-				<p><a name="interest-1"> 의료 </a></p>
-				<br>
-				<p><a name="interest-2"> IoT </a></p>
-				<br>
-				<h3> 기술 </h3>
-				<div class="list">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/c.png?raw=true" width="100px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/java.png?raw=true" width="100px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/android.png?raw=true" width="84px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/arduino.png?raw=true" width="147px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/oracle.png?raw=true" width="100px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/aws.png?raw=true" width="266px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/photoshop.png?raw=true" width="100px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/illustrator.png?raw=true" width="100px" height="100px">
+				<div id ="interest">
+					<h3> 관심분야 </h3>
+					<p><a name="interest-1"> 의료 </a></p>
+					블라블라<br>
+					블라블라<br>
+					블라블라<br>
+					블라블라<br>
 					<br>
+					<p><a name="interest-2"> IoT </a></p>
+					블라블라<br>
+					블라블라<br>
+					블라블라<br>
+					블라블라<br>
 					<br>
-					<table class="table">
-    						<thead class="table-primary">
-      							<tr>
-       								<th>이름</th>
-             							<th>분류</th>
-             							<th>숙련도</th>
-           						</tr>
-         					</thead>
-         					<tbody>
-         						<tr>
-                 						<td>C언어</td>
-                 						<td>언어</td>
-                 						<td>???</td>
-               						</tr>
-         						<tr>
-                 						<td>자바</td>
-                 						<td>언어</td>
-                 						<td>???</td>
-               						</tr>
-							<tr>
-                 						<td>아두이노</td>
-                 						<td>하드웨어</td>
-                 						<td>???</td>
-               						</tr>
-         						<tr>
-                 						<td>안드로이드</td>
-                 						<td>라이브러리</td>
-                 						<td>???</td>
-               						</tr>
-							<tr>
-                 						<td>오라클 DB</td>
-                 						<td>데이터베이스</td>
-                 						<td>???</td>
-               						</tr>
-         						<tr>
-                 						<td>아마존 웹 서비스</td>
-                 						<td>클라우드</td>
-                 						<td>???</td>
-               						</tr>
-         						<tr>
-                 						<td>포토샵</td>
-                 						<td>그래픽툴</td>
-                 						<td>???</td>
-               						</tr>
-         						<tr>
-                 						<td>일러스트레이터</td>
-                 						<td>그래픽툴</td>
-                 						<td>???</td>
-               						</tr>
-             					</tbody>
-           				</table>
 					<br>
 				</div>
-				예정<br>
-				<div class="list">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/nodejs.png?raw=true" width="163px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/html+css+js.png?raw=true" width="170px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/jquery.gif?raw=true" width="100px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/bootstrap.png?raw=true" width="100px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/d3js.png?raw=true" width="100px" height="100px">
-					<br>
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/mobius.png?raw=true" width="142px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/raspberry.png?raw=true" width="79px" height="100px">
-					<br>
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/python.png?raw=true" width="100px" height="100px">
-					<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/tensorflow.png?raw=true" width="100px" height="100px">
+				<div id="skill">
+					<h3> 기술 </h3>
+					<div class="list">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/c.png?raw=true" width="100px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/java.png?raw=true" width="100px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/android.png?raw=true" width="84px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/arduino.png?raw=true" width="147px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/oracle.png?raw=true" width="100px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/aws.png?raw=true" width="266px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/photoshop.png?raw=true" width="100px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/illustrator.png?raw=true" width="100px" height="100px">
+						<br>
+						<br>
+						<table class="table">
+    							<thead class="table-primary">
+      								<tr>
+       									<th>이름</th>
+             								<th>분류</th>
+             								<th>숙련도</th>
+           							</tr>
+         						</thead>
+         						<tbody>
+         							<tr>
+                 							<td>C언어</td>
+                 							<td>언어</td>
+                 							<td>???</td>
+               							</tr>
+         							<tr>
+                 							<td>자바</td>
+                 							<td>언어</td>
+                 							<td>???</td>
+               							</tr>
+								<tr>
+                 							<td>아두이노</td>
+                 							<td>하드웨어</td>
+                 							<td>???</td>
+               							</tr>
+         							<tr>
+                 							<td>안드로이드</td>
+                 							<td>라이브러리</td>
+                 							<td>???</td>
+               							</tr>
+								<tr>
+                 							<td>오라클 DB</td>
+                 							<td>데이터베이스</td>
+                 							<td>???</td>
+               							</tr>
+         							<tr>
+                 							<td>아마존 웹 서비스</td>
+                 							<td>클라우드</td>
+                 							<td>???</td>
+               							</tr>
+         							<tr>
+                 							<td>포토샵</td>
+                 							<td>그래픽툴</td>
+                 							<td>???</td>
+               							</tr>
+         							<tr>
+                 							<td>일러스트레이터</td>
+                 							<td>그래픽툴</td>
+                 							<td>???</td>
+               							</tr>
+             						</tbody>
+           					</table>
+						<br>
+					</div>
+					예정<br>
+					<div class="list">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/nodejs.png?raw=true" width="163px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/html+css+js.png?raw=true" width="170px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/jquery.gif?raw=true" width="100px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/bootstrap.png?raw=true" width="100px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/d3js.png?raw=true" width="100px" height="100px">
+						<br>
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/mobius.png?raw=true" width="142px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/raspberry.png?raw=true" width="79px" height="100px">
+						<br>
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/python.png?raw=true" width="100px" height="100px">
+						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/tensorflow.png?raw=true" width="100px" height="100px">
+					</div>
 				</div>
-				<h3> 준비 중 </h3>
-				<p><a name="prepare-1"> 백준 : 매일 풀기 목표(실현 가능성 20%) </a></p>
-				<br>
-				<p><a name="prepare-2"> GitHub : 일일 커밋 목표(실현 가능성 40%) </a></p>
-				<br>
-				<p><a name="prepare-3"> 어학 : 토익 800이상 목표, 오픽 ? </a></p>
-				<br>
-				<p><a name="prepare-4"> 정보처리기사 : 18년도 취득 목표 </a></p>
-				<br>
-				<p><a name="prepare-5"> 인턴 : 17년도 겨울 방학 때 예정 </a></p>
-				<br>
-				<div style="height: 1%; overflow: hidden;">
+				<div id="prepare">
+					<h3> 준비 중 </h3>
+					<p><a name="prepare-1"> 백준 : 매일 풀기 목표(실현 가능성 20%) </a></p>
+					<br>
+					<p><a name="prepare-2"> GitHub : 일일 커밋 목표(실현 가능성 40%) </a></p>
+					<br>
+					<p><a name="prepare-3"> 어학 : 토익 800이상 목표, 오픽 ? </a></p>
+					<br>
+					<p><a name="prepare-4"> 정보처리기사 : 18년도 취득 목표 </a></p>
+					<br>
+					<p><a name="prepare-5"> 인턴 : 17년도 겨울 방학 때 예정 </a></p>
+					<br>
+				</div>
+				<div id="git" style="height: 1%; overflow: hidden;">
 				<h3><a name="activity-1"> GitHub 활동 </a></h3>
 				<img src="https://avatars0.githubusercontent.com/u/29747023?s=310&v=4" style="float:left;"/>
 				<div class="calendar" style="float:left;"></div>
