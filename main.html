@@ -1,321 +1,365 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
-	<head>
-		<title> SongA's page </title>
-		<link rel="shortcut icon" type="image/x-icon" href="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/logo/icon3.png?raw=true"/>
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
-  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-	
-  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
-		<link rel="stylesheet" href="./css/main.css"/>
+   <head>
+      <title> SongA's page </title>
+      <link rel="shortcut icon" type="image/x-icon" href="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/logo/icon3.png?raw=true"/>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+   
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
+      <link rel="stylesheet" href="./css/main.css"/>
 
-		<script>
-			var interest, skill, prepare, git;
-			var scroll;
-			var offset;
-			$(document).ready(function(){
-				GitHubCalendar(".calendar", "LeeSongA");
+      <script>
+         var interest, skill, prepare, activity, hobby, open;
+         var scroll;
+         var offset;
 
-				interest = $('#interest').offset().top;
-				skill = $('#skill').offset().top;
-				prepare = $('#prepare').offset().top;
-				git = $('#git').offset().top;
-				offset = $(window).height()/2;
+         var time = 0;
 
-    				$("#interest").css('opacity','0');
-    				$("#skill").css('opacity','0');
-    				$("#prepare").css('opacity','0');
-    				$("#git").css('opacity','0');
+         $(document).ready(function(){
+            /* 깃 캘린더 불러옴 */
+            GitHubCalendar(".calendar", "LeeSongA");
 
-			 	$(window).scroll(function(){
-			      		scroll = $(this).scrollTop();
-	      				if( scroll + offset >= interest ) 
-           					$("#interest").css('opacity','1');
-        				else
-    						$("#interest").css('opacity','0');
-	      				if( scroll + offset >= skill ) 
-           					$("#skill").css('opacity','1');
-        				else
-    						$("#skill").css('opacity','0');
-					if( scroll + offset >= prepare ) 
-           					$("#prepare").css('opacity','1');
-        				else
-    						$("#prepare").css('opacity','0');
-	      				if( scroll + offset >= git ) 
-           					$("#git").css('opacity','1');
-        				else
-    						$("#git").css('opacity','0');
-        				  
-   				});
-			});
-		</script>
-	</head>
-	<body>
-		<div id="page-wrapper">
-			<header>
-				<div class="background w3-display-container w3-opacity-min"></div>
-				<a href="./main.html">
-					<img class="home" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/menu/home.png?raw=true">
-				</a>
-				<nav id="main-navigation">
-					<div class="pull-left">
-						항목&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp항목&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp항목&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp항목
-						<ul class="outer-menu" style="display:none;">
-							<li class="outer-menu-item">
-								<span class="menu-title"> 관심분야 </span>
-								<ul class="inner-menu">
-									<li class="inner-menu-item"><a href="#interest-1"> 의료 </a></li>
-									<li class="inner-menu-item"><a href="#interest-2"> IoT </a></li>
-								</ul>
-							</li>
-							<li class="outer-menu-item">
-								<span class="menu-title"> 기술 </span>
-								<ul class="inner-menu">
-									<li class="inner-menu-item"><a href="#skill-1"> C </a></li>
-									<li class="inner-menu-item"><a href="#skill-2"> Java </a></li>
-								</ul>
-							</li>
-							<li class="outer-menu-item">
-								<span class="menu-title"> 준비 중 </span>
-								<ul class="inner-menu">
-									<li class="inner-menu-item"><a href="#"> BAEKJOON </a></li>
-									<li class="inner-menu-item"><a href="#"> GitHub </a></li>
-									<li class="inner-menu-item"><a href="#"> 어학 </a></li>
-									<li class="inner-menu-item"><a href="#"> 정보처리기사 </a></li>
-									<li class="inner-menu-item"><a href="#"> 집중교육  (18. 1학기) </a></li>
-									<li class="inner-menu-item"><a href="#"> After you (18. 여름) </a></li>
-									<li class="inner-menu-item"><a href="#"> 인턴 (18. 겨울) </a></li>
-								</ul>
-							</li>
-							<li class="outer-menu-item">
-								<span class="menu-title"> 활동 </span>
-								<ul class="inner-menu">
-									<li class="inner-menu-item"><a href="#activity-1"> GitHub 활동 </a></li>
-									<li class="inner-menu-item"><a href="#activity-2"> 파란학기 </a></li>
-									<li class="inner-menu-item"><a href="#activity-3"> 도메인 분석 및 설계 </a></li>
-									<li class="inner-menu-item"><a href="#activity-4"> 교과 외 활동 </a></li>
-								</ul>
-							</li>
-							<li class="outer-menu-item">
-								<span class="menu-title"> 사용한 오픈 소스 </span>
-								<ul class="inner-menu">
-									<li class="inner-menu-item"><a href="#reference-1"> JQuery </a></li>
-									<li class="inner-menu-item"><a href="#reference-2"> 깃 캘린더 </a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-					<div class="shadow"></div
-				</nav>
-			</header>
-			<aside>
-			<div class="card">
-  				<img class="card-img-top" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/logo/icon3.png?raw=true" alt="Card image">
-  				<div class="card-body">
-    					<h4 class="card-title">Song A Lee</h4>
-    					<p class="card-text">안녕하세요 이송아입니다. 제 개인 페이지에 와주셔서 감사합니다.</p>
-					<a href="https://github.com/leesonga" target="_blank">
-						<img class="icon" src="https://assets-cdn.github.com/favicon.ico">
-					</a>
-					<a href="http://software.ajou.ac.kr/" target="_blank">
-						<img class="icon" src="http://www.ajou.ac.kr/_resources/pavicon_ajou.png">
-					</a>
-					<a href="https://eclass2.ajou.ac.kr" target="_blank">
-						<img class="icon" src="https://eclass2.ajou.ac.kr/ui/bb-icon2.ico">
-					</a>
-					<a href="https://www.google.com" target="_blank">
-						<img class="icon" src="https://www.google.co.kr/images/branding/product/ico/googleg_lodp.ico">
-					</a>
-					<img class="icon" src="https://static.xx.fbcdn.net/rsrc.php/yl/r/H3nktOa7ZMg.ico">
-					<a href="https://www.acmicpc.net" target="_blank">
-						<img class="icon" src="https://www.acmicpc.net/favicon-32x32.png">
-					</a>
-					<a href="https://www.w3schools.com" target="_blank">
-						<img class="icon" src="https://www.w3schools.com/favicon.ico">
-					</a>
-					<a href="http://www.iotocean.org/main/" target="_blank">
-						<img class="icon" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/shortcut/ocean.png?raw=true">
-					</a>
-					<a href="mailto:thddk0317@nate.com">
-						<img class="mail" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/shortcut/mail.png?raw=true"><span>thddk0317@nate.com</span>
-					</a>
-  				</div>
-			</div>
-			</aside>
-			<section>
-				<div id ="interest">
-					<h3> 관심분야 </h3>
-					<p><a name="interest-1"> 의료 </a></p>
-					블라블라<br>
-					블라블라<br>
-					블라블라<br>
-					블라블라<br>
-					<br>
-					<p><a name="interest-2"> IoT </a></p>
-					블라블라<br>
-					블라블라<br>
-					블라블라<br>
-					블라블라<br>
-					<br>
-					<br>
-				</div>
-				<div id="skill">
-					<h3> 기술 </h3>
-					<div class="list">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/c.png?raw=true" width="100px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/java.png?raw=true" width="100px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/android.png?raw=true" width="84px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/arduino.png?raw=true" width="147px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/oracle.png?raw=true" width="100px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/aws.png?raw=true" width="266px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/photoshop.png?raw=true" width="100px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/illustrator.png?raw=true" width="100px" height="100px">
-						<br>
-						<br>
-						<table class="table">
-    							<thead class="table-primary">
-      								<tr>
-       									<th>이름</th>
-             								<th>분류</th>
-             								<th>숙련도</th>
-           							</tr>
-         						</thead>
-         						<tbody>
-         							<tr>
-                 							<td>C언어</td>
-                 							<td>언어</td>
-                 							<td>???</td>
-               							</tr>
-         							<tr>
-                 							<td>자바</td>
-                 							<td>언어</td>
-                 							<td>???</td>
-               							</tr>
-								<tr>
-                 							<td>아두이노</td>
-                 							<td>하드웨어</td>
-                 							<td>???</td>
-               							</tr>
-         							<tr>
-                 							<td>안드로이드</td>
-                 							<td>라이브러리</td>
-                 							<td>???</td>
-               							</tr>
-								<tr>
-                 							<td>오라클 DB</td>
-                 							<td>데이터베이스</td>
-                 							<td>???</td>
-               							</tr>
-         							<tr>
-                 							<td>아마존 웹 서비스</td>
-                 							<td>클라우드</td>
-                 							<td>???</td>
-               							</tr>
-         							<tr>
-                 							<td>포토샵</td>
-                 							<td>그래픽툴</td>
-                 							<td>???</td>
-               							</tr>
-         							<tr>
-                 							<td>일러스트레이터</td>
-                 							<td>그래픽툴</td>
-                 							<td>???</td>
-               							</tr>
-             						</tbody>
-           					</table>
-						<br>
-					</div>
-					예정<br>
-					<div class="list">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/nodejs.png?raw=true" width="163px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/html+css+js.png?raw=true" width="170px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/jquery.gif?raw=true" width="100px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/bootstrap.png?raw=true" width="100px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/d3js.png?raw=true" width="100px" height="100px">
-						<br>
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/mobius.png?raw=true" width="142px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/raspberry.png?raw=true" width="79px" height="100px">
-						<br>
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/python.png?raw=true" width="100px" height="100px">
-						<img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/tensorflow.png?raw=true" width="100px" height="100px">
-					</div>
-				</div>
-				<div id="prepare">
-					<h3> 준비 중 </h3>
-					<p><a name="prepare-1"> 백준 : 매일 풀기 목표(실현 가능성 20%) </a></p>
-					<br>
-					<p><a name="prepare-2"> GitHub : 일일 커밋 목표(실현 가능성 40%) </a></p>
-					<br>
-					<p><a name="prepare-3"> 어학 : 토익 800이상 목표, 오픽 ? </a></p>
-					<br>
-					<p><a name="prepare-4"> 정보처리기사 : 18년도 취득 목표 </a></p>
-					<br>
-					<p><a name="prepare-5"> 인턴 : 17년도 겨울 방학 때 예정 </a></p>
-					<br>
-				</div>
-				<div id="git" style="height: 1%; overflow: hidden;">
-				<h3><a name="activity-1"> GitHub 활동 </a></h3>
-				<img src="https://avatars0.githubusercontent.com/u/29747023?s=310&v=4" style="float:left;"/>
-				<div class="calendar" style="float:left;"></div>
-				</div>
-				<br>
-				<h3><a name="activity-2"> 파란학기(이노베이터 상) </a></h3>
-				<img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/paran1.jpg?raw=true" width="400px" height="300px">
-				<img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/paran2.jpg?raw=true" width="400px" height="300px">
-				<p> 시기: 17.09.01 ~ 17.12.22 </p>
-				<p> 주제: 카메라인식을 통한 지능형 시간표 추천 </p>
-				<p> 사용 언어: Java / Python / C </p>
-				<p> 기술 요소: 텐서플로우, 아마존 웹서비스, Django(Python)</p>
-				<p> 팀내 역할: 시간표를 추천해주는 지능형 추천 시스템 구축, 학생의 요구사항 조사 및 파악, 사용하기 편한 UI 구축 </p>
-				<p> 내용 </p>
-				<p> 느낀점 </p>
-				<br>		
-				<h3><a name="activity-3"> 도메인 분석 및 설계 </a></h3>
-				<img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd1.jpg?raw=true" width="400px" height="300px">
-				<img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd2.jpg?raw=true" width="400px" height="300px">
-				<img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd3.jpg?raw=true" width="400px" height="300px">
-				<p> 시기: 17.03.02 ~ 17.06.23 </p>
-				<p> 주제: 영화관 관리 시스템(MOVMORE)를 Agile 방법론에 따른 설계 </p>
-				<p> 사용 언어: Java</p>
-				<p> 기술 요소: 주로 설계에 관한 프로젝트 </p>
-				<p> 팀내 역할: Inception에서의 Use Case, Elaboration 에서의 Domain Model, Design Class Diagram </p>
-				<p> 내용 </p>
-				<p> 느낀점</p>
-				<br>
-				<h3><a name="activity-4"> 교과 외 활동 </a></h3>
-				<p> 17.09.19 - 3D 프린터 체험 실습 교육 </p>
-				<p> 교육 내용: 피젯스피너 모델링 및 3D 프린터 출력 </p>
-				<p> 17.09.20 - 공학과 의료 토크 콘서트</p>
-				<p> 교육 내용: </p>
-				<p> 17.09.28 - 아두이노 기반 IoT 체험 실습 교육 </p>
-				<p> 교육 내용: 스마트폰으로 제어하는 아두이노 무선 자동차(RC카) 제작</p>
-				<p> 17.11.25~26 - 아두이노 기반 스마트홈 활용교육(수료)</p>
-				<p> 교육 내용: </p>
-					<ul>
-						<li>1일차: 기초회로의론, ADC, PWM, 센서입력, 아날로그입출력, 적외선, 초음파 거리 측정, 디지털 입출력, 스마트선풍기 제작</li>
-						<li>2일차: LCD를 이용한 문자출력, UART 통신, 블루투스 통신, 가정용 스마트 미세먼지 측정기 제작 프로젝트</li>
-					</ul>
-				<p> 17.12.26 ~ ??? - (주)엠투소프트 인턴</p>
-				<br>
-				<h3> 취미 </h3>
-				<br>
-				<h3> 사용한 오픈 소스 </h3>
-				<p><a name="reference-1">JQuery</a>
-				<a href="https://code.jquery.com/jquery-3.2.1.min.js">https://code.jquery.com/jquery-3.2.1.min.js</a></p>
-				<p><a name="reference-2">깃 캘린더</a>
-				<a href="https://github.com/IonicaBizau/github-calendar">https://github.com/IonicaBizau/github-calendar</a></p>
-				<p><a name="reference-3">Popper.js</a>
-				<a href="https://popper.js.org/">https://popper.js.org/</a></p>
-				<p><a name="reference-4">Bootstrap</a>
-				<a href="https://github.com/twbs/bootstrap">https://github.com/twbs/bootstrap</a></p>
-			</section>
-			<footer>하단 바 - 뭘 넣어야 될까?</footer>
-		</div>
-	</body>
+            /* 하단의 화살표 애니메이션 */
+            setInterval(function() {
+               if(time == 0){
+                  $('.arrow1').css('opacity','1');
+                  $('.arrow2').css('opacity','0');
+               }else if(time == 1){
+                  $('.arrow3').css('opacity','1');
+                  $('.arrow1').css('opacity','0');
+               }else if(time == 2){
+                  $('.arrow2').css('opacity','1');
+                  $('.arrow3').css('opacity','0');
+               }
+               if(time++==2)
+                  time=0;            
+            }, 1000);
+            /* 하단의 화살표 애니메이션 */      
+
+            /* 새로고침시 가장 상단으로 이동 */
+            window.onbeforeunload = function() {
+               $("html").scrollTop(0);
+            }; 
+
+            /* 특정 영역 도달해야 컨텐츠가 나오게 */
+            interest = $('#interest').offset().top;
+            skill = $('#skill').offset().top;
+            prepare = $('#prepare').offset().top;
+            activity = $('#activity').offset().top;
+            hobby = $('#hobby').offset().top;
+            open = $('#open').offset().top;
+            offset = $(window).height()/2;
+
+                $("#interest").css('opacity','0');
+                $("#skill").css('opacity','0');
+                $("#prepare").css('opacity','0');
+                $("#git").css('opacity','0');
+
+             $(window).scroll(function(){
+                     scroll = $(this).scrollTop();
+                     if( scroll + offset >= interest ) 
+                  $("#interest").animate({ opacity : "1" },1000);
+
+                     if( scroll + offset >= skill ) 
+                  $("#skill").animate({ opacity : "1" },1000);
+
+               if( scroll + offset >= prepare ) 
+                  $("#prepare").animate({ opacity : "1" },1000);
+
+                     if( scroll + offset >= activity ) 
+                  $("#activity").animate({ opacity : "1" },1000);
+
+                     if( scroll + offset >= hobby ) 
+                  $("#hobby").animate({ opacity : "1" },1000);
+
+                     if( scroll + offset >= open ) 
+                  $("#open").animate({ opacity : "1" },1000);
+               });
+            /* 특정 영역 도달해야 컨텐츠가 나오게 */
+         });
+      
+         /* 화살표 버튼을 누르면 메인으로 진입 */
+         function enter_main(){
+            $("html").animate({ scrollTop : interest },1000);
+         }
+         /* 화살표 버튼을 누르면 메인으로 진입 */
+      </script>
+   </head>
+   <body>
+      <div id="page-wrapper">
+         <div class="parallax w3-display-container">
+            <a href="javascript:enter_main();">
+               <img class="arrow1" src="bottom1.png">
+               <img class="arrow2" src="bottom2.png">
+               <img class="arrow3" src="bottom3.png">
+            </a>
+         </div>
+         <header>
+            <a href="./main.html">
+               <img class="home" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/menu/home.png?raw=true">
+            </a>
+            <nav id="main-navigation">
+               <div class="pull-left">
+                  항목&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp항목&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp항목&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp항목
+                  <ul class="outer-menu" style="display:none;">
+                     <li class="outer-menu-item">
+                        <span class="menu-title"> 관심분야 </span>
+                        <ul class="inner-menu">
+                           <li class="inner-menu-item"><a href="#interest-1"> 의료 </a></li>
+                           <li class="inner-menu-item"><a href="#interest-2"> IoT </a></li>
+                        </ul>
+                     </li>
+                     <li class="outer-menu-item">
+                        <span class="menu-title"> 기술 </span>
+                        <ul class="inner-menu">
+                           <li class="inner-menu-item"><a href="#skill-1"> C </a></li>
+                           <li class="inner-menu-item"><a href="#skill-2"> Java </a></li>
+                        </ul>
+                     </li>
+                     <li class="outer-menu-item">
+                        <span class="menu-title"> 준비 중 </span>
+                        <ul class="inner-menu">
+                           <li class="inner-menu-item"><a href="#"> BAEKJOON </a></li>
+                           <li class="inner-menu-item"><a href="#"> GitHub </a></li>
+                           <li class="inner-menu-item"><a href="#"> 어학 </a></li>
+                           <li class="inner-menu-item"><a href="#"> 정보처리기사 </a></li>
+                           <li class="inner-menu-item"><a href="#"> 집중교육  (18. 1학기) </a></li>
+                           <li class="inner-menu-item"><a href="#"> After you (18. 여름) </a></li>
+                           <li class="inner-menu-item"><a href="#"> 인턴 (18. 겨울) </a></li>
+                        </ul>
+                     </li>
+                     <li class="outer-menu-item">
+                        <span class="menu-title"> 활동 </span>
+                        <ul class="inner-menu">
+                           <li class="inner-menu-item"><a href="#activity-1"> GitHub 활동 </a></li>
+                           <li class="inner-menu-item"><a href="#activity-2"> 파란학기 </a></li>
+                           <li class="inner-menu-item"><a href="#activity-3"> 도메인 분석 및 설계 </a></li>
+                           <li class="inner-menu-item"><a href="#activity-4"> 교과 외 활동 </a></li>
+                        </ul>
+                     </li>
+                     <li class="outer-menu-item">
+                        <span class="menu-title"> 사용한 오픈 소스 </span>
+                        <ul class="inner-menu">
+                           <li class="inner-menu-item"><a href="#reference-1"> JQuery </a></li>
+                           <li class="inner-menu-item"><a href="#reference-2"> 깃 캘린더 </a></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+               <div class="shadow"></div>
+            </nav>
+         </header>
+         <aside>
+         <div class="card">
+              <img class="card-img-top" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/logo/icon3.png?raw=true" alt="Card image">
+              <div class="card-body">
+                   <h4 class="card-title">Song A Lee</h4>
+                   <p class="card-text">안녕하세요 이송아입니다. 제 개인 페이지에 와주셔서 감사합니다.</p>
+               <a href="https://github.com/leesonga" target="_blank">
+                  <img class="icon" src="https://assets-cdn.github.com/favicon.ico">
+               </a>
+               <a href="http://software.ajou.ac.kr/" target="_blank">
+                  <img class="icon" src="http://www.ajou.ac.kr/_resources/pavicon_ajou.png">
+               </a>
+               <a href="https://eclass2.ajou.ac.kr" target="_blank">
+                  <img class="icon" src="https://eclass2.ajou.ac.kr/ui/bb-icon2.ico">
+               </a>
+               <a href="https://www.google.com" target="_blank">
+                  <img class="icon" src="https://www.google.co.kr/images/branding/product/ico/googleg_lodp.ico">
+               </a>
+               <img class="icon" src="https://static.xx.fbcdn.net/rsrc.php/yl/r/H3nktOa7ZMg.ico">
+               <a href="https://www.acmicpc.net" target="_blank">
+                  <img class="icon" src="https://www.acmicpc.net/favicon-32x32.png">
+               </a>
+               <a href="https://www.w3schools.com" target="_blank">
+                  <img class="icon" src="https://www.w3schools.com/favicon.ico">
+               </a>
+               <a href="http://www.iotocean.org/main/" target="_blank">
+                  <img class="icon" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/shortcut/ocean.png?raw=true">
+               </a>
+               <a href="mailto:thddk0317@nate.com">
+                  <img class="mail" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/shortcut/mail.png?raw=true"><span>thddk0317@nate.com</span>
+               </a>
+              </div>
+         </div>
+         </aside>
+         <section>
+            <div id ="interest">
+               <h3> 관심분야 </h3>
+               <p><a name="interest-1"> 의료 </a></p>
+               블라블라<br>
+               블라블라<br>
+               블라블라<br>
+               블라블라<br>
+               <br>
+               <p><a name="interest-2"> IoT </a></p>
+               블라블라<br>
+               블라블라<br>
+               블라블라<br>
+               블라블라<br>
+               <br>
+               <br>
+            </div>
+            <div id="skill">
+               <h3> 기술 </h3>
+               <div class="list">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/c.png?raw=true" width="100px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/java.png?raw=true" width="100px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/android.png?raw=true" width="84px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/arduino.png?raw=true" width="147px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/oracle.png?raw=true" width="100px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/aws.png?raw=true" width="266px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/photoshop.png?raw=true" width="100px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/illustrator.png?raw=true" width="100px" height="100px">
+                  <br>
+                  <br>
+                  <table class="table">
+                         <thead class="table-primary">
+                              <tr>
+                                  <th>이름</th>
+                                     <th>분류</th>
+                                     <th>숙련도</th>
+                                </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                      <td>C언어</td>
+                                      <td>언어</td>
+                                      <td>???</td>
+                                    </tr>
+                              <tr>
+                                      <td>자바</td>
+                                      <td>언어</td>
+                                      <td>???</td>
+                                    </tr>
+                        <tr>
+                                      <td>아두이노</td>
+                                      <td>하드웨어</td>
+                                      <td>???</td>
+                                    </tr>
+                              <tr>
+                                      <td>안드로이드</td>
+                                      <td>라이브러리</td>
+                                      <td>???</td>
+                                    </tr>
+                        <tr>
+                                      <td>오라클 DB</td>
+                                      <td>데이터베이스</td>
+                                      <td>???</td>
+                                    </tr>
+                              <tr>
+                                      <td>아마존 웹 서비스</td>
+                                      <td>클라우드</td>
+                                      <td>???</td>
+                                    </tr>
+                              <tr>
+                                      <td>포토샵</td>
+                                      <td>그래픽툴</td>
+                                      <td>???</td>
+                                    </tr>
+                              <tr>
+                                      <td>일러스트레이터</td>
+                                      <td>그래픽툴</td>
+                                      <td>???</td>
+                                    </tr>
+                               </tbody>
+                          </table>
+                  <br>
+               </div>
+               예정<br>
+               <div class="list">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/nodejs.png?raw=true" width="163px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/html+css+js.png?raw=true" width="170px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/jquery.gif?raw=true" width="100px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/bootstrap.png?raw=true" width="100px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/d3js.png?raw=true" width="100px" height="100px">
+                  <br>
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/mobius.png?raw=true" width="142px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/raspberry.png?raw=true" width="79px" height="100px">
+                  <br>
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/python.png?raw=true" width="100px" height="100px">
+                  <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/tensorflow.png?raw=true" width="100px" height="100px">
+               </div>
+            </div>
+            <div id="prepare">
+               <h3> 준비 중 </h3>
+               <p><a name="prepare-1"> 백준 : 매일 풀기 목표(실현 가능성 20%) </a></p>
+               <br>
+               <p><a name="prepare-2"> GitHub : 일일 커밋 목표(실현 가능성 40%) </a></p>
+               <br>
+               <p><a name="prepare-3"> 어학 : 토익 800이상 목표, 오픽 ? </a></p>
+               <br>
+               <p><a name="prepare-4"> 정보처리기사 : 18년도 취득 목표 </a></p>
+               <br>
+               <p><a name="prepare-5"> 인턴 : 17년도 겨울 방학 때 예정 </a></p>
+               <br>
+            </div>
+            <div id="activity" style="height: 1%; overflow: hidden;">
+               <h3><a name="activity-1"> GitHub 활동 </a></h3>
+               <img src="https://avatars0.githubusercontent.com/u/29747023?s=310&v=4" style="float:left;"/>
+               <div class="calendar" style="float:left;"></div>
+               <br>
+               <h3><a name="activity-2"> 파란학기(이노베이터 상) </a></h3>
+               <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/paran1.jpg?raw=true" width="400px" height="300px">
+               <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/paran2.jpg?raw=true" width="400px" height="300px">
+               <p> 시기: 17.09.01 ~ 17.12.22 </p>
+               <p> 주제: 카메라인식을 통한 지능형 시간표 추천 </p>
+               <p> 사용 언어: Java / Python / C </p>
+               <p> 기술 요소: 텐서플로우, 아마존 웹서비스, Django(Python)</p>
+               <p> 팀내 역할: 시간표를 추천해주는 지능형 추천 시스템 구축, 학생의 요구사항 조사 및 파악, 사용하기 편한 UI 구축 </p>
+               <p> 내용 </p>
+               <p> 느낀점 </p>
+               <br>      
+               <h3><a name="activity-3"> 도메인 분석 및 설계 </a></h3>
+               <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd1.jpg?raw=true" width="400px" height="300px">
+               <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd2.jpg?raw=true" width="400px" height="300px">
+               <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd3.jpg?raw=true" width="400px" height="300px">
+               <p> 시기: 17.03.02 ~ 17.06.23 </p>
+               <p> 주제: 영화관 관리 시스템(MOVMORE)를 Agile 방법론에 따른 설계 </p>
+               <p> 사용 언어: Java</p>
+               <p> 기술 요소: 주로 설계에 관한 프로젝트 </p>
+               <p> 팀내 역할: Inception에서의 Use Case, Elaboration 에서의 Domain Model, Design Class Diagram </p>
+               <p> 내용 </p>
+               <p> 느낀점</p>
+               <br>
+               <h3><a name="activity-4"> 교과 외 활동 </a></h3>
+               <p> 17.09.19 - 3D 프린터 체험 실습 교육 </p>
+               <p> 교육 내용: 피젯스피너 모델링 및 3D 프린터 출력 </p>
+               <p> 17.09.20 - 공학과 의료 토크 콘서트</p>
+               <p> 교육 내용: </p>
+               <p> 17.09.28 - 아두이노 기반 IoT 체험 실습 교육 </p>
+               <p> 교육 내용: 스마트폰으로 제어하는 아두이노 무선 자동차(RC카) 제작</p>
+               <p> 17.11.25~26 - 아두이노 기반 스마트홈 활용교육(수료)</p>
+               <p> 교육 내용: </p>
+               <ul>
+                  <li>1일차: 기초회로의론, ADC, PWM, 센서입력, 아날로그입출력, 적외선, 초음파 거리 측정, 디지털 입출력, 스마트선풍기 제작</li>
+                  <li>2일차: LCD를 이용한 문자출력, UART 통신, 블루투스 통신, 가정용 스마트 미세먼지 측정기 제작 프로젝트</li>
+               </ul>
+               <p> 17.12.26 ~ ??? - (주)엠투소프트 인턴</p>
+               <br>
+            </div>
+            <div id="hobby">
+               <h3> 취미 </h3>
+               <br>
+            </div>
+            <div id="open">
+               <h3> 사용한 오픈 소스 </h3>
+               <p><a name="reference-1">JQuery</a>
+               <a href="https://code.jquery.com/jquery-3.2.1.min.js">https://code.jquery.com/jquery-3.2.1.min.js</a></p>
+               <p><a name="reference-2">깃 캘린더</a>
+               <a href="https://github.com/IonicaBizau/github-calendar">https://github.com/IonicaBizau/github-calendar</a></p>
+               <p><a name="reference-3">Popper.js</a>
+               <a href="https://popper.js.org/">https://popper.js.org/</a></p>
+               <p><a name="reference-4">Bootstrap</a>
+               <a href="https://github.com/twbs/bootstrap">https://github.com/twbs/bootstrap</a></p>
+            </div>
+         </section>
+         <footer>하단 바 - 뭘 넣어야 될까?</footer>
+      </div>
+   </body>
 </html>
-
-
