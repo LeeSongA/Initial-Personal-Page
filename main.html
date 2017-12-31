@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
    <head>
@@ -6,19 +6,40 @@
       <link rel="shortcut icon" type="image/x-icon" href="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/logo/icon3.png?raw=true"/>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-   
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+      <script src="https://cdn.rawgit.com/coverflowjs/coverflow/master/dist/coverflow.min.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/coverflowjs/coverflow/master/dist/coverflow.css" />   
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
       <link rel="stylesheet" href="./css/main.css"/>
 
+      <style>
+	       /* 포트폴리오에 사용되는 스타일 */
+               .ui-coverflow-wrapper{
+	               height:350px;
+        	       margin-top: 50px;
+      }
+               .ui-state-active{
+       	        	border:0px;
+      }
+	       #coverflow img{
+			width:400px;
+			height:300px;
+	       }
+	       /* 포트폴리오에 사용되는 스타일 */
+      </style>
+
       <script>
-         var interest, skill, prepare, activity, hobby, open;
+         var interest, skill, prepare, portfolio, activity, hobby, open;
          var scroll;
          var offset;
 
          var time = 0;
+
+	 var portfolio_before = 2;
+	 var portfolio_now = 2;
 
          $(document).ready(function(){
             /* 깃 캘린더 불러옴 */
@@ -46,41 +67,30 @@
                $("html").scrollTop(0);
             }; 
 
-            /* 특정 영역 도달해야 컨텐츠가 나오게 */
-            interest = $('#interest').offset().top;
-            skill = $('#skill').offset().top;
-            prepare = $('#prepare').offset().top;
-            activity = $('#activity').offset().top;
-            hobby = $('#hobby').offset().top;
-            open = $('#open').offset().top;
-            offset = $(window).height()/2;
+            /* 스크롤시 각 항목 등장하게 */
+	    scroll_main();
 
-                $("#interest").css('opacity','0');
-                $("#skill").css('opacity','0');
-                $("#prepare").css('opacity','0');
-                $("#git").css('opacity','0');
-
-             $(window).scroll(function(){
-                     scroll = $(this).scrollTop();
-                     if( scroll + offset >= interest ) 
-                  $("#interest").animate({ opacity : "1" },1000);
-
-                     if( scroll + offset >= skill ) 
-                  $("#skill").animate({ opacity : "1" },1000);
-
-               if( scroll + offset >= prepare ) 
-                  $("#prepare").animate({ opacity : "1" },1000);
-
-                     if( scroll + offset >= activity ) 
-                  $("#activity").animate({ opacity : "1" },1000);
-
-                     if( scroll + offset >= hobby ) 
-                  $("#hobby").animate({ opacity : "1" },1000);
-
-                     if( scroll + offset >= open ) 
-                  $("#open").animate({ opacity : "1" },1000);
-               });
-            /* 특정 영역 도달해야 컨텐츠가 나오게 */
+            /* 포트폴리오 앨범형식으로 */
+            $('#coverflow').coverflow({
+                active: 2,
+                select: function(event, ui){
+                }
+             });
+    
+            $('#coverflow img').click(function() {
+                if( ! $(this).hasClass('ui-state-active')){
+                	return;
+                }
+		$('#portfolio .'+portfolio_now).css('display','block');
+		$('#portfolio .'+portfolio_now).css('opacity','0');
+                $('#portfolio .'+portfolio_now).animate({ opacity : "1" },1000);
+		$('#portfolio .'+portfolio_before).css('display','none');
+		portfolio_before = portfolio_now;
+		
+		/* 선택할 때마다 영역의 좌표가 달라지므로 스크롤 나타나는 값 다시 설정 */
+		scroll_main();
+            });
+            /* 포트폴리오 앨범형식으로 */
          });
       
          /* 화살표 버튼을 누르면 메인으로 진입 */
@@ -88,15 +98,58 @@
             $("html").animate({ scrollTop : interest },1000);
          }
          /* 화살표 버튼을 누르면 메인으로 진입 */
+      
+         /* 스크롤시 각 항목 등장하게 */
+         function scroll_main(){
+            interest = $('#interest').offset().top;
+            skill = $('#skill').offset().top;
+            prepare = $('#prepare').offset().top;
+            portfolio = $('#portfolio').offset().top;
+            activity = $('#activity').offset().top;
+            hobby = $('#hobby').offset().top;
+            open = $('#open').offset().top;
+            offset = $(window).height()/2;
+
+            $("#interest").css('opacity','0');
+            $("#skill").css('opacity','0');
+            $("#prepare").css('opacity','0');
+            $("#porfolio").css('opacity','0');
+            $("#activity").css('opacity','0');
+
+            $(window).scroll(function(){
+                scroll = $(this).scrollTop();
+                if( scroll + offset >= interest ) 
+                  	$("#interest").animate({ opacity : "1" },1000);
+
+                if( scroll + offset >= skill ) 
+                  	$("#skill").animate({ opacity : "1" },1000);
+
+               if( scroll + offset >= prepare ) 
+                  	$("#prepare").animate({ opacity : "1" },1000);
+
+               if( scroll + offset >= portfolio ) 
+                  	$("#portfolio").animate({ opacity : "1" },1000);
+
+                if( scroll + offset >= activity )
+                  	$("#activity").animate({ opacity : "1" },1000);
+
+                if( scroll + offset >= hobby ) 
+                  	$("#hobby").animate({ opacity : "1" },1000);
+
+                if( scroll + offset >= open ) 
+                  	$("#open").animate({ opacity : "1" },1000);
+            });
+         }
+         /* 스크롤시 각 항목 등장하게 */
       </script>
    </head>
    <body>
       <div id="page-wrapper">
          <div class="parallax w3-display-container">
             <a href="javascript:enter_main();">
-               <img class="arrow1" src="bottom1.png">
-               <img class="arrow2" src="bottom2.png">
-               <img class="arrow3" src="bottom3.png">
+               <img class="arrow1" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/background/bottom1.png?raw=true">
+               <img class="arrow2" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/background/bottom2.png?raw=true">
+               <img class="arrow3" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/background/bottom3.png?raw=true">
             </a>
          </div>
          <header>
@@ -299,12 +352,21 @@
                <p><a name="prepare-5"> 인턴 : 17년도 겨울 방학 때 예정 </a></p>
                <br>
             </div>
-            <div id="activity" style="height: 1%; overflow: hidden;">
-               <h3><a name="activity-1"> GitHub 활동 </a></h3>
-               <img src="https://avatars0.githubusercontent.com/u/29747023?s=310&v=4" style="float:left;"/>
-               <div class="calendar" style="float:left;"></div>
-               <br>
-               <h3><a name="activity-2"> 파란학기(이노베이터 상) </a></h3>
+	    <div id="portfolio">
+               <h3> 포트폴리오 </h3>
+	       <div>
+	       <div id="coverflow">
+			<img src="http://placehold.it/400x300" onclick="javascript:portfolio_now=0;"/>
+			<img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/paran1.jpg?raw=true" onclick="javascript:portfolio_now=1;"/>
+			<img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd1.jpg?raw=true" onclick="javascript:portfolio_now=2;"/>
+			<img src="http://placehold.it/400x300/E8117F/FFFFFF" onclick="javascript:portfolio_now=3;"/>
+			<img src="http://placehold.it/400x300" onclick="javascript:portfolio_now=4;"/>
+	       </div>
+	       </div>
+	       <div id="coverflow-slider"></div>
+	       <br>
+	       <div class="1" style="display:none;">
+	       <h3> 파란학기(이노베이터 상) </h3>
                <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/paran1.jpg?raw=true" width="400px" height="300px">
                <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/paran2.jpg?raw=true" width="400px" height="300px">
                <p> 시기: 17.09.01 ~ 17.12.22 </p>
@@ -314,8 +376,10 @@
                <p> 팀내 역할: 시간표를 추천해주는 지능형 추천 시스템 구축, 학생의 요구사항 조사 및 파악, 사용하기 편한 UI 구축 </p>
                <p> 내용 </p>
                <p> 느낀점 </p>
+	       </div>
                <br>      
-               <h3><a name="activity-3"> 도메인 분석 및 설계 </a></h3>
+	       <div class="2">
+               <h3> 도메인 분석 및 설계 </h3>
                <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd1.jpg?raw=true" width="400px" height="300px">
                <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd2.jpg?raw=true" width="400px" height="300px">
                <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd3.jpg?raw=true" width="400px" height="300px">
@@ -326,6 +390,12 @@
                <p> 팀내 역할: Inception에서의 Use Case, Elaboration 에서의 Domain Model, Design Class Diagram </p>
                <p> 내용 </p>
                <p> 느낀점</p>
+	       </div>
+               <br>
+	    </div>	
+            <div id="activity" style="height: 1%; overflow: hidden;">
+               <h3><a name="activity-1"> GitHub 활동 </a></h3>
+               <div class="calendar"></div>
                <br>
                <h3><a name="activity-4"> 교과 외 활동 </a></h3>
                <p> 17.09.19 - 3D 프린터 체험 실습 교육 </p>
@@ -357,6 +427,8 @@
                <a href="https://popper.js.org/">https://popper.js.org/</a></p>
                <p><a name="reference-4">Bootstrap</a>
                <a href="https://github.com/twbs/bootstrap">https://github.com/twbs/bootstrap</a></p>
+	       <p><a name="reference-5">Coverflow</a>
+	       <a href="https://github.com/coverflowjs/coverflow">https://github.com/coverflowjs/coverflow</a></p>
             </div>
          </section>
          <footer>하단 바 - 뭘 넣어야 될까?</footer>
