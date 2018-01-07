@@ -9,11 +9,20 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
       <script src="https://cdn.rawgit.com/coverflowjs/coverflow/master/dist/coverflow.min.js"></script>
+	   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/leesonga/leesonga.github.io/master/js/github-activity.js"></script>
 
+	   
       <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/coverflowjs/coverflow/master/dist/coverflow.css" />   
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
       <link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
       <link rel="stylesheet" href="./css/main.css"/>
+<<<<<<< HEAD
+=======
+	   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" />
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/leesonga/leesonga.github.io/master/css/github-activity-0.1.5.min.css" />
+
+>>>>>>> 5270634e18d3c16ae62277298d030b72c82a2e3a
       <style>
 	       /* 포트폴리오에 사용되는 스타일 */
                .ui-coverflow-wrapper{
@@ -28,6 +37,14 @@
 			height:300px;
 	       }
 	       /* 포트폴리오에 사용되는 스타일 */
+	       /* 깃 활동에 사용되는 스타일 */   
+   .feed {
+       width: 700px;
+       height: 500px;
+       margin:0 auto;
+      }
+   	       /* 깃 활동에 사용되는 스타일 */
+
       </style>
 
       <script>
@@ -41,6 +58,9 @@
 	 var portfolio_now = 2;
 
          $(document).ready(function(){
+		/*깃 활동 불러옴*/
+   GitHubActivity.feed({ username: 'leesonga', selector: '.feed' });
+		 
             /* 깃 캘린더 불러옴 */
             GitHubCalendar(".calendar", "LeeSongA");
 
@@ -399,6 +419,7 @@
             <div id="activity" style="height: 1%; overflow: hidden;">
                <h3><a name="activity-1"> GitHub 활동 </a></h3>
                <div class="calendar"></div>
+		<div class="feed"></div>
                <br>
                <h3><a name="activity-4"> 교과 외 활동 </a></h3>
                <p> 17.09.19 - 3D 프린터 체험 실습 교육 </p>
