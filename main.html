@@ -22,6 +22,43 @@
       <link rel="stylesheet" href="./css/github-activity-0.1.5.min.css" />
 
       <style>
+	       .outer-menu {
+		       list-style-type: none;
+		       margin: 0;
+		       padding: 0;
+		       overflow: hidden;
+		       background-color: #333;
+	      }
+	      .outer-menu-item {
+		      float: left;
+	      }
+	      .menu-title {
+		      display: block;
+		      color: white;
+		      text-align: center;
+		      padding: 14px 16px;
+		      text-decoration: none;
+	      }
+	      .menu-title:hover {
+		      background-color: #111;
+	      }
+	      .inner-menu {
+		      list-style-type: none;
+		      margin: 0;
+		      padding: 0;
+		      width: 200px;
+		      backgroud-color: #f1f1f1;
+	      }
+	      .inner-menu-item {
+		      display: block;
+		      color: #000;
+		      padding: 8px 16px;
+		      text-decoration:none;
+	      }
+	      .inner-menu-item:hover {
+		      background-color: #555;
+		      color: white;
+	      }	      
 	       /* 포트폴리오에 사용되는 스타일 */
                .ui-coverflow-wrapper{
 	               height: 350px;
@@ -176,9 +213,8 @@
                <img class="home" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/menu/home.png?raw=true">
             </a>
             <nav id="main-navigation">
-               <div class="pull-left">
-                  항목&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp항목&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp항목&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp항목
-                  <ul class="outer-menu" style="display:none;">
+               <div class="pull-left">            		       
+                  <ul class="outer-menu">
                      <li class="outer-menu-item">
                         <span class="menu-title"> 관심분야 </span>
                         <ul class="inner-menu">
