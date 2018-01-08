@@ -12,14 +12,14 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
       <script src="https://cdn.rawgit.com/coverflowjs/coverflow/master/dist/coverflow.min.js"></script>
       <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-      <script type="text/javascript" src="https://raw.githubusercontent.com/leesonga/leesonga.github.io/master/js/github-activity.js"></script>
+      <script type="text/javascript" src="./js/github-activity.js"></script>
    
       <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/coverflowjs/coverflow/master/dist/coverflow.css" />   
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
       <link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
       <link rel="stylesheet" href="./css/main.css"/>
       <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" />
-      <link rel="stylesheet" href="https://raw.githubusercontent.com/leesonga/leesonga.github.io/master/css/github-activity-0.1.5.min.css" />
+      <link rel="stylesheet" href="./css/github-activity-0.1.5.min.css" />
 
       <style>
 	       /* 포트폴리오에 사용되는 스타일 */
@@ -60,6 +60,9 @@
 		 
             /* 깃 캘린더 불러옴 */
             GitHubCalendar(".calendar", "LeeSongA");
+
+	    /* 깃 활동 사이즈 재조정 */
+            $('.feed').css('width',$('.calendar').width());	
 
             /* 하단의 화살표 애니메이션 */
             setInterval(function() {
@@ -129,7 +132,7 @@
             $("#interest").css('opacity','0');
             $("#skill").css('opacity','0');
             $("#prepare").css('opacity','0');
-            $("#porfolio").css('opacity','0');
+           // $("#portfolio").css('opacity','0');
             $("#activity").css('opacity','0');
 
             $(window).scroll(function(){
@@ -415,8 +418,11 @@
 	    </div>	
             <div id="activity" style="height: 1%; overflow: hidden;">
                <h3><a name="activity-1"> GitHub 활동 </a></h3>
+               <div>
                <div class="calendar"></div>
+               <br>
 	       <div class="feed"></div>
+               </div>
                <br>
                <h3><a name="activity-4"> 교과 외 활동 </a></h3>
                <p> 17.09.19 - 3D 프린터 체험 실습 교육 </p>
@@ -442,13 +448,18 @@
                <h3> 사용한 오픈 소스 </h3>
                <p><a name="reference-1">JQuery</a>
                <a href="https://code.jquery.com/jquery-3.2.1.min.js">https://code.jquery.com/jquery-3.2.1.min.js</a></p>
-               <p><a name="reference-2">깃 캘린더</a>
+               <p><a name="reference-2">Git Calendar</a>
                <a href="https://github.com/IonicaBizau/github-calendar">https://github.com/IonicaBizau/github-calendar</a></p>
-               <p><a name="reference-3">Popper.js</a>
+	       <p><a name="reference-3">Git Activity</a>
+	       <a href="https://github.com/caseyscarborough/github-activity">https://github.com/caseyscarborough/github-activity</a></p>
+	       <p><a name="reference-3">Mustache.js</a>
+	       <a href="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js">http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js</a></p>
+	       <p><a name="reference-3">Octicons.css</a>
+	       <a href="http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css</a></p>				       <p><a name="reference-4">Popper.js</a>
                <a href="https://popper.js.org/">https://popper.js.org/</a></p>
-               <p><a name="reference-4">Bootstrap</a>
+               <p><a name="reference-5">Bootstrap</a>
                <a href="https://github.com/twbs/bootstrap">https://github.com/twbs/bootstrap</a></p>
-	       <p><a name="reference-5">Coverflow</a>
+	       <p><a name="reference-6">Coverflow</a>
 	       <a href="https://github.com/coverflowjs/coverflow">https://github.com/coverflowjs/coverflow</a></p>
             </div>
          </section>
