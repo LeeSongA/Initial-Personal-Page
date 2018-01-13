@@ -42,7 +42,7 @@
 	      .menu-title:hover {
 		      background-color: #436a96;
 	      }
-	      .outer-menu-item:hover .inner-menu {		 
+	      .outer-menu-item:hover .inner-menu-item {		 
 		      display: block;
 	      }
 	      .inner-menu {
@@ -95,6 +95,12 @@
 	 var portfolio_now = 2;
 
          $(document).ready(function(){
+
+	    /*상단바 사이즈 조절*/
+	    var menu_item_width = $('.outer-menu').width()/7;   //상단바 너비를 7로 나눔
+            $('.inner-menu').css('width',menu_item_width);      //.inner-menu의 너비를 재 조정(상단바 너비/7)
+	    /*상단바 사이즈 조절*/
+
 	    /*깃 활동 불러옴*/
 	    GitHubActivity.feed({ username: 'leesonga', selector: '.feed' });
 		 
