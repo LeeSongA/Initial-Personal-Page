@@ -17,49 +17,41 @@
       <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/coverflowjs/coverflow/master/dist/coverflow.css" />   
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
       <link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
-      <link rel="stylesheet" href="./css/main.css"/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" />
       <link rel="stylesheet" href="./css/github-activity-0.1.5.min.css" />
+      <link rel="stylesheet" href="./css/main.css?ver=0.1"/>
 
       <style>
 	       .outer-menu {
 		       list-style-type: none;
-		       margin: 0;
-		       padding: 0;
 		       overflow: hidden;
-		       background-color: #7a7a7a;
 	      }
 	      .outer-menu-item {
 		      float: left;
+		      text-align:center;
+		      background-color: #7a7a7a;
 	      }
-	      .menu-title {
-		      display: block;
-		      color: white;
-		      text-align: center;
-		      padding: 12px 16px;
-		      text-decoration: none;
-	      }
-	      .menu-title:hover {
-		      background-color: #436a96;
-	      }
-	      .outer-menu-item:hover .inner-menu-item {		 
+	      .outer-menu-item:hover .inner-menu {		 
 		      display: block;
 	      }
 	      .inner-menu {
+		      margin:0;
+		      padding:0;
+		      display: none;
 		      list-style-type: none;
-		      margin: 0;
-		      padding: 0;
-		      width: 200px;
 		      backgroud-color: #f1f1f1;
 	      }
-	      .inner-menu-item {
-		      display: none;
+	      .inner-menu-item{
+		      background-color: #7a7a7a;
+	      }
+	      .inner-menu-item a{
 		      color: #000;
-		      padding: 12px 16px;
 		      text-decoration: none;
 	      }
-	      .inner-menu-item:hover {
+	      .inner-menu-item:hover{
 		      background-color: #508fd8;
+	      }	      
+	      .inner-menu-item:hover a{
 		      color: white;
 	      }	      
 	       /* 포트폴리오에 사용되는 스타일 */
@@ -94,11 +86,23 @@
 	 var portfolio_before = 2;
 	 var portfolio_now = 2;
 
+	 $(window).resize(function() {
+
+	    /*상단바 사이즈 조절*/
+	    var menu_item_width = $('.outer-menu').width()/7;   //상단바 너비를 7로 나눔
+            $('.outer-menu-item').css('width',menu_item_width);      //.outer-menu의 너비를 재 조정(상단바 너비/7)
+            $('.inner-menu').css('width',menu_item_width);      //.inner-menu의 너비를 재 조정(상단바 너비/7)
+            $('.inner-menu-item').css('width',menu_item_width);      //.inner-menu-item의 너비를 재 조정(상단바 너비/7)
+	    /*상단바 사이즈 조절*/
+	 });
+
          $(document).ready(function(){
 
 	    /*상단바 사이즈 조절*/
 	    var menu_item_width = $('.outer-menu').width()/7;   //상단바 너비를 7로 나눔
+            $('.outer-menu-item').css('width',menu_item_width);      //.outer-menu의 너비를 재 조정(상단바 너비/7)
             $('.inner-menu').css('width',menu_item_width);      //.inner-menu의 너비를 재 조정(상단바 너비/7)
+            $('.inner-menu-item').css('width',menu_item_width);      //.inner-menu-item의 너비를 재 조정(상단바 너비/7)
 	    /*상단바 사이즈 조절*/
 
 	    /*깃 활동 불러옴*/
@@ -178,7 +182,7 @@
             $("#interest").css('opacity','0');
             $("#skill").css('opacity','0');
             $("#prepare").css('opacity','0');
-           // $("#portfolio").css('opacity','0');
+            $("#portfolio").css('opacity','0');
             $("#activity").css('opacity','0');
 
             $(window).scroll(function(){
@@ -225,21 +229,21 @@
                <div class="pull-left">            		       
                   <ul class="outer-menu">
                      <li class="outer-menu-item">
-                        <span class="menu-title"> 관심분야 </span>
+                        관심분야
                         <ul class="inner-menu">
                            <li class="inner-menu-item"><a href="#interest-1"> 의료 </a></li>
                            <li class="inner-menu-item"><a href="#interest-2"> IoT </a></li>
                         </ul>
                      </li>
                      <li class="outer-menu-item">
-                        <span class="menu-title"> 기술 </span>
+                        기술 
                         <ul class="inner-menu">
                            <li class="inner-menu-item"><a href="#skill-1"> C </a></li>
                            <li class="inner-menu-item"><a href="#skill-2"> Java </a></li>
                         </ul>
                      </li>
                      <li class="outer-menu-item">
-                        <span class="menu-title"> 준비 중 </span>
+                        준비 중
                         <ul class="inner-menu">
                            <li class="inner-menu-item"><a href="#"> BAEKJOON </a></li>
                            <li class="inner-menu-item"><a href="#"> GitHub </a></li>
@@ -251,14 +255,14 @@
                         </ul>
                      </li>
 		     <li class="outer-menu-item">
-                        <span class="menu-title"> 포트폴리오 </span>
+                        포트폴리오
                         <ul class="inner-menu">
                            <li class="inner-menu-item"><a href="#"> 포 </a></li>
                            <li class="inner-menu-item"><a href="#"> 포 </a></li>                           
                         </ul>
                      </li>  
                      <li class="outer-menu-item">
-                        <span class="menu-title"> 활동 </span>
+                        활동
                         <ul class="inner-menu">
                            <li class="inner-menu-item"><a href="#activity-1"> GitHub 활동 </a></li>
                            <li class="inner-menu-item"><a href="#activity-2"> 파란학기 </a></li>
@@ -266,23 +270,22 @@
                            <li class="inner-menu-item"><a href="#activity-4"> 교과 외 활동 </a></li>
                         </ul>
                      </li>
-                     <li class="outer-menu-item">
-                        <span class="menu-title"> 사용한 오픈 소스 </span>
-                        <ul class="inner-menu">
-                           <li class="inner-menu-item"><a href="#reference-1"> JQuery </a></li>
-                           <li class="inner-menu-item"><a href="#reference-2"> 깃 캘린더 </a></li>
-                        </ul>
-                     </li>
 		     <li class="outer-menu-item">
-                        <span class="menu-title"> 취미 </span>
+                        취미
                         <ul class="inner-menu">
                            <li class="inner-menu-item"><a href="#"> 취미 </a></li>
                            <li class="inner-menu-item"><a href="#"> 취미 </a></li>                           
                         </ul>
                      </li>
+                     <li class="outer-menu-item">
+                       	오픈 소스
+                        <ul class="inner-menu">
+                           <li class="inner-menu-item"><a href="#reference-1"> JQuery </a></li>
+                           <li class="inner-menu-item"><a href="#reference-2"> 깃 캘린더 </a></li>
+                        </ul>
+                     </li>
                   </ul>
                </div>
-               <div class="shadow"></div>
             </nav>
          </header>
          <aside>
@@ -504,7 +507,7 @@
                <br>
             </div>
             <div id="open">
-               <h3> 사용한 오픈 소스 </h3>
+               <h3> 오픈 소스 </h3>
                <p><a name="reference-1">JQuery</a>
                <a href="https://code.jquery.com/jquery-3.2.1.min.js">https://code.jquery.com/jquery-3.2.1.min.js</a></p>
                <p><a name="reference-2">Git Calendar</a>
