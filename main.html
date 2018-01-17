@@ -84,7 +84,7 @@
          var time = 0;
 
 	 var portfolio_before = 2;
-	 var portfolio_now = 2;
+	 var portfolio_init = 0;
 
 	 $(window).resize(function() {
 
@@ -143,22 +143,17 @@
             $('#coverflow').coverflow({
                 active: 2,
                 select: function(event, ui){
+			$('#portfolio div:nth-of-type('+(ui.index+2)+')').css('display','block');
+			$('#portfolio div:nth-of-type('+(ui.index+2)+')').css('opacity','0');
+            	   	$('#portfolio div:nth-of-type('+(ui.index+2)+')').animate({ opacity : "1" },1000);
+			if(portfolio_init++ != 0)
+				$('#portfolio div:nth-of-type('+(portfolio_before+2)+')').css('display','none');
+			portfolio_before = ui.index;
+		
+			/* 선택할 때마다 영역의 좌표가 달라지므로 스크롤 나타나는 값 다시 설정 */
+			scroll_main();
                 }
              });
-    
-            $('#coverflow img').click(function() {
-                if( ! $(this).hasClass('ui-state-active')){
-                	return;
-                }
-		$('#portfolio .'+portfolio_now).css('display','block');
-		$('#portfolio .'+portfolio_now).css('opacity','0');
-                $('#portfolio .'+portfolio_now).animate({ opacity : "1" },1000);
-		$('#portfolio .'+portfolio_before).css('display','none');
-		portfolio_before = portfolio_now;
-		
-		/* 선택할 때마다 영역의 좌표가 달라지므로 스크롤 나타나는 값 다시 설정 */
-		scroll_main();
-            });
             /* 포트폴리오 앨범형식으로 */
          });
       
@@ -437,16 +432,16 @@
                <h3> 포트폴리오 </h3>
 	       <div>
 	       <div id="coverflow">
-			<img src="http://placehold.it/400x300" onclick="javascript:portfolio_now=0;"/>
-			<img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/paran1.jpg?raw=true" onclick="javascript:portfolio_now=1;"/>
-			<img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd1.jpg?raw=true" onclick="javascript:portfolio_now=2;"/>
-			<img src="http://placehold.it/400x300/E8117F/FFFFFF" onclick="javascript:portfolio_now=3;"/>
-			<img src="http://placehold.it/400x300" onclick="javascript:portfolio_now=4;"/>
+			<img src="http://placehold.it/400x300"/>
+			<img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/paran1.jpg?raw=true"/>
+			<img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd1.jpg?raw=true"/>
+			<img src="http://placehold.it/400x300/E8117F/FFFFFF"/>
+			<img src="http://placehold.it/400x300"/>
 	       </div>
 	       </div>
-	       <div id="coverflow-slider"></div>
 	       <br>
-	       <div class="1" style="display:none;">
+	       <div style="display:none;"></div>
+	       <div style="display:none;">
 	       <h3> 파란학기(이노베이터 상) </h3>
                <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/paran1.jpg?raw=true" width="400px" height="300px">
                <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/paran2.jpg?raw=true" width="400px" height="300px">
@@ -459,7 +454,7 @@
                <p> 느낀점 </p>
 	       </div>
                <br>      
-	       <div class="2">
+	       <div style="display:none;">
                <h3> 도메인 분석 및 설계 </h3>
                <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd1.jpg?raw=true" width="400px" height="300px">
                <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/portfolio/dasd2.jpg?raw=true" width="400px" height="300px">
