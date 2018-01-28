@@ -28,6 +28,13 @@
 		       list-style-type: none;
 		       overflow: hidden;
 	      }
+	      .outer-menu-link {
+		       color: #ffffff;
+	      }
+	      .outer-menu-link:hover {
+		       color: #ffffff;
+		       text-decoration:none;
+	      }
 	      .outer-menu-item {
 		      float: left;
 		      text-align:center;
@@ -63,7 +70,8 @@
 	               padding-top:50px;
 	               width:80%;
 	               height: 400px;
-	               background: rgba(0,0,0,0.5);
+	               border: 1px solid #e8e8e8;
+	               border-radius: 5px;	
 	       }
                .ui-state-active{
        	        	border: 0px;
@@ -238,52 +246,26 @@
                         </ul>
                      </li>
                      <li class="outer-menu-item">
-                        기술 
-                        <ul class="inner-menu">
-                           <li class="inner-menu-item"><a href="#skill-1"> C </a></li>
-                           <li class="inner-menu-item"><a href="#skill-2"> Java </a></li>
-                        </ul>
+                        <a class="outer-menu-link" href="#skill">기술</a>
                      </li>
                      <li class="outer-menu-item">
-                        준비 중
-                        <ul class="inner-menu">
-                           <li class="inner-menu-item"><a href="#"> BAEKJOON </a></li>
-                           <li class="inner-menu-item"><a href="#"> GitHub </a></li>
-                           <li class="inner-menu-item"><a href="#"> 어학 </a></li>
-                           <li class="inner-menu-item"><a href="#"> 정보처리기사 </a></li>
-                           <li class="inner-menu-item"><a href="#"> After you (18. 여름) </a></li>
-                           <li class="inner-menu-item"><a href="#"> 인턴 (18. 겨울) </a></li>
-                        </ul>
+                        <a class="outer-menu-link" href="#prepare">준비 중</a>
                      </li>
 		     <li class="outer-menu-item">
-                        포트폴리오
-                        <ul class="inner-menu">
-                           <li class="inner-menu-item"><a href="#"> 포 </a></li>
-                           <li class="inner-menu-item"><a href="#"> 포 </a></li>                           
-                        </ul>
+                        <a class="outer-menu-link" href="#portfolio">포트폴리오</a>
                      </li>  
                      <li class="outer-menu-item">
                         활동
                         <ul class="inner-menu">
                            <li class="inner-menu-item"><a href="#activity-1"> GitHub 활동 </a></li>
-                           <li class="inner-menu-item"><a href="#activity-2"> 파란학기 </a></li>
-                           <li class="inner-menu-item"><a href="#activity-3"> 도메인 분석 및 설계 </a></li>
-                           <li class="inner-menu-item"><a href="#activity-4"> 교과 외 활동 </a></li>
+                           <li class="inner-menu-item"><a href="#activity-2"> 교과 외 활동 </a></li>
                         </ul>
                      </li>
 		     <li class="outer-menu-item">
-                        취미
-                        <ul class="inner-menu">
-                           <li class="inner-menu-item"><a href="#"> 취미 </a></li>
-                           <li class="inner-menu-item"><a href="#"> 취미 </a></li>                           
-                        </ul>
+                        <a class="outer-menu-link" href="#hobby">취미</a>
                      </li>
                      <li class="outer-menu-item">
-                       	오픈 소스
-                        <ul class="inner-menu">
-                           <li class="inner-menu-item"><a href="#reference-1"> JQuery </a></li>
-                           <li class="inner-menu-item"><a href="#reference-2"> 깃 캘린더 </a></li>
-                        </ul>
+                        <a class="outer-menu-link" href="#reference">오픈 소스</a>
                      </li>
                   </ul>
                </div>
@@ -341,7 +323,7 @@
                <br>
             </div>
             <div id="skill">
-               <h3> 기술 </h3>
+               <h3> <a name="skill">기술</a> </h3>
                <div class="list">
                   <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/c.png?raw=true" height="100px">
                   <img class="skill" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/java.png?raw=true" height="100px">
@@ -422,20 +404,20 @@
                </div>
             </div>
             <div id="prepare">
-               <h3> 준비 중 </h3>
-               <p><a name="prepare-1"> 백준 : 매일 풀기 목표(실현 가능성 20%) </a></p>
+               <h3> <a name="prepare">준비 중</a> </h3>
+               <p>백준 : 매일 풀기 목표</p>
                <br>
-               <p><a name="prepare-2"> GitHub : 일일 커밋 목표(실현 가능성 40%) </a></p>
+               <p>GitHub : 일일 커밋 목표</p>
                <br>
-               <p><a name="prepare-3"> 어학 : 토익 800이상 목표, 오픽 ? </a></p>
+               <p>GitPage : 기술 블로그 운영 목표</p>
                <br>
-               <p><a name="prepare-4"> 정보처리기사 : 18년도 취득 목표 </a></p>
+               <p>어학 : 토익 800이상 목표, 오픽 ?</p>
                <br>
-               <p><a name="prepare-5"> 인턴 : 17년도 겨울 방학 때 예정 </a></p>
+               <p>정보처리기사 : 18년도 취득 목표</p>
                <br>
             </div>
 	    <div id="portfolio">
-               <h3> 포트폴리오 </h3>
+               <h3> <a name="portfolio">포트폴리오</a> </h3>
 	       <div>
 	       <div id="coverflow">
 			<img src="http://placehold.it/400x300"/>
@@ -487,7 +469,7 @@
 	       <div class="feed"></div>
                </div>
                <br>
-               <h3><a name="activity-4"> 교과 외 활동 </a></h3>
+               <h3><a name="activity-2"> 교과 외 활동 </a></h3>
                <p> 17.09.19 - 3D 프린터 체험 실습 교육 </p>
                <p> 교육 내용: 피젯스피너 모델링 및 3D 프린터 출력 </p>
                <p> 17.09.20 - 공학과 의료 토크 콘서트</p>
@@ -504,25 +486,25 @@
                <br>
             </div>
             <div id="hobby">
-               <h3> 취미 </h3>
+               <h3> <a name="hobby">취미</a> </h3>
                <br>
             </div>
             <div id="open">
-               <h3> 오픈 소스 </h3>
-               <p><a name="reference-1">JQuery</a>
+               <h3> <a name="reference">오픈 소스</a> </h3>
+               <p>JQuery
                <a href="https://code.jquery.com/jquery-3.2.1.min.js">https://code.jquery.com/jquery-3.2.1.min.js</a></p>
-               <p><a name="reference-2">Git Calendar</a>
+               <p>Git Calendar
                <a href="https://github.com/IonicaBizau/github-calendar">https://github.com/IonicaBizau/github-calendar</a></p>
-	       <p><a name="reference-3">Git Activity</a>
+	       <p>Git Activity
 	       <a href="https://github.com/caseyscarborough/github-activity">https://github.com/caseyscarborough/github-activity</a></p>
-	       <p><a name="reference-3">Mustache.js</a>
+	       <p>Mustache.js
 	       <a href="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js">http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js</a></p>
-	       <p><a name="reference-3">Octicons.css</a>
-	       <a href="http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css</a></p>				       <p><a name="reference-4">Popper.js</a>
+	       <p>Octicons.css
+	       <a href="http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css</a></p>				       <p>Popper.js
                <a href="https://popper.js.org/">https://popper.js.org/</a></p>
-               <p><a name="reference-5">Bootstrap</a>
+               <p>Bootstrap
                <a href="https://github.com/twbs/bootstrap">https://github.com/twbs/bootstrap</a></p>
-	       <p><a name="reference-6">Coverflow</a>
+	       <p>Coverflow
 	       <a href="https://github.com/coverflowjs/coverflow">https://github.com/coverflowjs/coverflow</a></p>
             </div>
          </section>
