@@ -14,4 +14,7 @@ It includes my skill, portfolio, activity, and etc...
 <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/html+css+js.png?raw=true" height="100px"> <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/jquery.gif?raw=true" height="100px"> <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/bootstrap.png?raw=true" height="100px"> <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/illustrator.png?raw=true" height="100px"> <img src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/photoshop.png?raw=true" height="100px">
 
 ---
-# Screen Shot
+# Screen Shot  
+
+![homepage](screenshot/20180226.png?raw=true)  
+
