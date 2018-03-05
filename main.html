@@ -5,29 +5,20 @@
       <title> SongA's page </title>
 
       <link rel="shortcut icon" type="image/x-icon" href="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/logo/icon3.png?raw=true"/>
-
-      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-      <script src="https://cdn.rawgit.com/coverflowjs/coverflow/master/dist/coverflow.min.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-      <script type="text/javascript" src="./js/github-activity.js"></script>
-      <script src="js/lightslider.js"></script>
-
-      <link rel="stylesheet" type="text/css" href="css/lightslider.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/coverflowjs/coverflow/master/dist/coverflow.css" />   
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
       <link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" />
       <link rel="stylesheet" href="./css/github-activity-0.1.5.min.css" />
       <link rel="stylesheet" href="./css/main.css?ver=0.1"/> 
-      
+      <link rel="stylesheet" type="text/css" href="css/lightslider.css" />
 
       <style>
 	      body::-webkit-scrollbar {
 		       display: none;
 	      }
+
+	      /* 드롭다운 메뉴 */
 	      .outer-menu {
 		       list-style-type: none;
 		       overflow: hidden;
@@ -75,20 +66,23 @@
 		      color: white;
 	      }
 
-	      /* 기술에 사용되는 스타일 */
+	      /* 기술 슬라이드 */
 	      .content-slider {
 		      list-style: none outside none;
-		      padding-left: 0;
-                      margin: 0;
+	      }
+	      .skill {
+                      width: 80%;
 	      }
               .skill .item {
                       margin-bottom: 60px;
-              }	    
-	      .skill {
-                      width: 800px;
+              }
+	      .skill-item {
+	      	      height: 100px;		     
+		      padding-right: 20px;
+		      padding-left: 20px;
 	      }
 
-	      /* 포트폴리오에 사용되는 스타일 */
+	      /* 포트폴리오 */
               .ui-coverflow-wrapper {
 	               display: block;
 	               margin: auto;
@@ -110,7 +104,7 @@
 			background-color: #EFF5FB;
 	      }	   
   
-	      /* 깃 활동에 사용되는 스타일 */   
+	      /* 깃 활동 */   
 	      .feed {
 		       width: 700px;
 		       height: 500px;
@@ -118,6 +112,15 @@
 	      }
    	       
       </style>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+      <script src="https://cdn.rawgit.com/coverflowjs/coverflow/master/dist/coverflow.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+      <script type="text/javascript" src="./js/github-activity.js"></script>
+      <script src="js/lightslider.js"></script>
 
       <script>
          var interest, skill, prepare, portfolio, activity, hobby, open;
@@ -131,56 +134,30 @@
 
 	 $(window).resize(function() {
 
-	    /*상단바 사이즈 조절*/
-	    var menu_item_width = $('.outer-menu').width()/7;   //상단바 너비를 7로 나눔
-            $('.outer-menu-item').css('width',menu_item_width);      //.outer-menu의 너비를 재 조정(상단바 너비/7)
-            $('.inner-menu').css('width',menu_item_width);      //.inner-menu의 너비를 재 조정(상단바 너비/7)
-            $('.inner-menu-item').css('width',menu_item_width);      //.inner-menu-item의 너비를 재 조정(상단바 너비/7)	    
+	    /* 상단바 사이즈 조절 */
+	    var menu_item_width = $('.outer-menu').width()/7;         //상단바 너비를 7로 나눔
+            $('.outer-menu-item').css('width', menu_item_width);      //.outer-menu의 너비를 재 조정(상단바 너비/7)
+            $('.inner-menu').css('width', menu_item_width);           //.inner-menu의 너비를 재 조정(상단바 너비/7)
+            $('.inner-menu-item').css('width', menu_item_width);      //.inner-menu-item의 너비를 재 조정(상단바 너비/7)	    
 	 });
 
          $(document).ready(function(){
 
-	    /*상단바 사이즈 조절*/
-	    var menu_item_width = $('.outer-menu').width()/7;   //상단바 너비를 7로 나눔
-            $('.outer-menu-item').css('width',menu_item_width);      //.outer-menu의 너비를 재 조정(상단바 너비/7)
-            $('.inner-menu').css('width',menu_item_width);      //.inner-menu의 너비를 재 조정(상단바 너비/7)
-            $('.inner-menu-item').css('width',menu_item_width);      //.inner-menu-item의 너비를 재 조정(상단바 너비/7)
+	    /* 새로고침시 가장 상단으로 이동 */
+            window.onbeforeunload = function() {
+               $("html").scrollTop(0);
+            }; 
+
+            /* 스크롤시 각 항목 등장하게 */
+	    scroll_main();
+
+	    /* 상단바 사이즈 조절 */
+	    var menu_item_width = $('.outer-menu').width()/7;   
+            $('.outer-menu-item').css('width', menu_item_width);      
+            $('.inner-menu').css('width', menu_item_width);      
+            $('.inner-menu-item').css('width', menu_item_width);
 	    
-	    /*기술 슬라이드*/
-	    $(".content-slider").lightSlider({
-                item:4,
-                loop:false,
-              	slideMove:2,
-                speed:600,
-                responsive : [
-                    {
-                        breakpoint:800,
-                        settings: {
-                            item:3,
-                            slideMove:1,
-                            slideMargin:6,
-                          }
-                    },
-                    {
-                        breakpoint:480,
-                        settings: {
-                            item:2,
-                            slideMove:1
-                          }
-                    }
-                ]
-            });
-
-	    /*깃 활동 불러옴*/
-	    GitHubActivity.feed({ username: 'leesonga', selector: '.feed' });
-		 
-            /* 깃 캘린더 불러옴 */
-            GitHubCalendar(".calendar", "LeeSongA");
-
-	    /* 깃 활동 사이즈 재조정 */
-            $('.feed').css('width',$('.calendar').width());	
-
-            /* 하단의 화살표 애니메이션 */
+	    /* 하단의 화살표 애니메이션 */
             setInterval(function() {
                if(time == 0){
                   $('.arrow1').css('opacity','1');
@@ -194,17 +171,39 @@
                }
                if(time++==2)
                   time=0;            
-            }, 1000);      
+            }, 1000); 
 
-            /* 새로고침시 가장 상단으로 이동 */
-            window.onbeforeunload = function() {
-               $("html").scrollTop(0);
-            }; 
+	    /* 기술 슬라이드 */
+	    $(".skill-slider").lightSlider({
+                item: 4,
+                loop: false,
+              	slideMove: 2,
+                speed: 600,
+                responsive: [
+                    {
+                        breakpoint: 800,
+                        settings: {
+                            item: 3,
+                            slideMove: 1,
+                            slideMargin: 6,
+                          }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            item: 2,
+                            slideMove: 1
+                          }
+                    }
+                ]
+            });
 
-            /* 스크롤시 각 항목 등장하게 */
-	    scroll_main();
+	    /* 기술 슬라이드 화살표 */
+	    $('.lSPrev').html('<img src="image/icon/skill/left.png?raw=true"/>');
+	    $('.lSNext').html('<img src="image/icon/skill/right.png?raw=true"/>');
 
-            /* 포트폴리오 앨범형식으로 */
+	    
+	    /* 포트폴리오 앨범형식으로 */
             $('#coverflow').coverflow({
                 active: 2,
                 select: function(event, ui){
@@ -218,7 +217,17 @@
 			/* 선택할 때마다 영역의 좌표가 달라지므로 스크롤 나타나는 값 다시 설정 */
 			scroll_main();
                 }
-             });
+            });
+
+	    /* 깃 활동 불러옴 */
+	    GitHubActivity.feed({ username: 'leesonga', selector: '.feed' });
+		 
+            /* 깃 캘린더 불러옴 */
+            GitHubCalendar(".calendar", "LeeSongA");
+
+	    /* 깃 활동 사이즈 재조정 */
+            $('.feed').css('width',$('.calendar').width());	         
+            
          });
       
          /* 화살표 버튼을 누르면 메인으로 진입 */
@@ -373,7 +382,7 @@
             <div class="skill" id="skill">
                <h3> <a name="skill">기술</a> </h3>
                <div class="item">
-		  <ul class="content-slider">
+		  <ul class="skill-slider">
                   	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/c.png?raw=true" height="100px"></li>
                   	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/java.png?raw=true" height="100px"></li>
                   	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/android.png?raw=true" height="100px"></li>
@@ -382,6 +391,15 @@
                   	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/aws.png?raw=true" height="100px"></li>
                   	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/photoshop.png?raw=true" height="100px"></li>
                   	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/illustrator.png?raw=true" height="100px"></li>
+			<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/nodejs.png?raw=true" height="100px"></li>
+                  	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/html+css+js.png?raw=true" height="100px"></li>
+                  	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/jquery.gif?raw=true" height="100px"></li>
+                  	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/bootstrap.png?raw=true" height="100px"></li>
+                  	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/d3js.png?raw=true" height="100px"></li>
+                  	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/mobius.png?raw=true" height="100px"></li>
+                  	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/raspberry.png?raw=true" height="100px"></li>
+                  	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/python.png?raw=true" height="100px"></li>
+                  	<li><img class="skill-item" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/tensorflow.png?raw=true" height="100px"></li>
                   </ul>
 		  <br>
                   <br>
@@ -437,21 +455,6 @@
                           </tbody>
                   </table>
                   <br>
-               </div>
-               <p>예정</p>
-	       <br>
-               <div class="list">
-                  <img class="skill-pre" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/nodejs.png?raw=true" height="100px">
-                  <img class="skill-pre" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/html+css+js.png?raw=true" height="100px">
-                  <img class="skill-pre" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/jquery.gif?raw=true" height="100px">
-                  <img class="skill-pre" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/bootstrap.png?raw=true" height="100px">
-                  <img class="skill-pre" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/d3js.png?raw=true" height="100px">
-                  <br>
-                  <img class="skill-pre" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/mobius.png?raw=true" height="100px">
-                  <img class="skill-pre" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/raspberry.png?raw=true" height="100px">
-                  <br>
-                  <img class="skill-pre" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/python.png?raw=true" height="100px">
-                  <img class="skill-pre" src="https://github.com/LeeSongA/leesonga.github.com/blob/master/image/icon/skill/tensorflow.png?raw=true" height="100px">
                </div>
             </div>
             <div id="prepare">
