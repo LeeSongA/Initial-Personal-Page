@@ -77,9 +77,7 @@
                       margin-bottom: 60px;
               }
 	      .skill-item {
-	      	      height: 100px;		     
-		      padding-right: 20px;
-		      padding-left: 20px;
+	      	      height: 100px;    
 	      }
 
 	      /* 포트폴리오 */
@@ -201,7 +199,10 @@
 	    /* 기술 슬라이드 화살표 */
 	    $('.lSPrev').html('<img src="image/icon/skill/left.png?raw=true"/>');
 	    $('.lSNext').html('<img src="image/icon/skill/right.png?raw=true"/>');
-
+	
+	    /* 기술 슬라이드 간격 */
+	    $('.lSSlideWrapper').css('padding','0 '+$('.lSSlideWrapper').width()/20+'px 0 '+$('.lSSlideWrapper').width()/20+'px');
+	    $('.skill-item').css('max-width',$('.lSSlideWrapper').width()*0.9/6);
 	    
 	    /* 포트폴리오 앨범형식으로 */
             $('#coverflow').coverflow({
